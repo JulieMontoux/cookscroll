@@ -196,5 +196,41 @@ final feedNotifierProvider =
     );
 
 typedef _$FeedNotifier = AutoDisposeAsyncNotifier<List<Recipe>>;
+String _$searchNotifierHash() => r'392dd1719ff084c8809fd50955fdde75c7439771';
+
+/// See also [SearchNotifier].
+@ProviderFor(SearchNotifier)
+final searchNotifierProvider =
+    AutoDisposeNotifierProvider<
+      SearchNotifier,
+      AsyncValue<List<Recipe>>
+    >.internal(
+      SearchNotifier.new,
+      name: r'searchNotifierProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$searchNotifierHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
+
+typedef _$SearchNotifier = AutoDisposeNotifier<AsyncValue<List<Recipe>>>;
+String _$userRecipesNotifierHash() =>
+    r'593305fce0c05eee9641b8460cc656fbfdeb91b7';
+
+/// See also [UserRecipesNotifier].
+@ProviderFor(UserRecipesNotifier)
+final userRecipesNotifierProvider =
+    AutoDisposeNotifierProvider<UserRecipesNotifier, List<Recipe>>.internal(
+      UserRecipesNotifier.new,
+      name: r'userRecipesNotifierProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$userRecipesNotifierHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
+
+typedef _$UserRecipesNotifier = AutoDisposeNotifier<List<Recipe>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

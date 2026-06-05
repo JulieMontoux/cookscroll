@@ -138,3 +138,36 @@ Future<List<Recipe>> savedRecipes(Ref ref) async {
 Future<Recipe> recipeById(Ref ref, String id) async {
   return ref.watch(recipeRepositoryProvider).getById(id);
 }
+
+// ── Search ──────────────────────────────────────────────────────────────────
+
+@riverpod
+class SearchNotifier extends _$SearchNotifier {
+  @override
+  AsyncValue<List<Recipe>> build() => const AsyncData([]);
+
+  Future<void> search(String query) async {
+    if (query.trim().isEmpty) {
+      state = const AsyncData([]);
+      return;
+    }
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(
+      () => ref.read(recipeRepositoryProvider).search(query.trim()),
+    );
+  }
+
+  void clear() => state = const AsyncData([]);
+}
+
+// ── User-created recipes (in-memory for MVP) ─────────────────────────────
+
+@riverpod
+class UserRecipesNotifier extends _$UserRecipesNotifier {
+  @override
+  List<Recipe> build() => [];
+
+  void add(Recipe recipe) => state = [recipe, ...state];
+
+  void remove(String id) => state = state.where((r) => r.id != id).toList();
+}

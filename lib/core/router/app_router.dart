@@ -10,6 +10,7 @@ import '../../features/feed/presentation/screens/feed_screen.dart';
 import '../../features/recipes/presentation/screens/recipe_detail_screen.dart';
 import '../../features/recipes/presentation/screens/my_recipes_screen.dart';
 import '../../features/recipes/presentation/screens/create_recipe_screen.dart';
+import '../../features/recipes/presentation/screens/search_screen.dart';
 import '../../features/menu/presentation/screens/weekly_menu_screen.dart';
 import '../../features/shopping_list/presentation/screens/shopping_list_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
@@ -60,6 +61,10 @@ GoRouter appRouter(Ref ref) {
                 ),
               ),
             ],
+          ),
+          GoRoute(
+            path: '/search',
+            builder: (_, __) => const SearchScreen(),
           ),
           GoRoute(
             path: '/menu',
