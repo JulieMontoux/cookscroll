@@ -1,0 +1,80 @@
+# ── Dart / Flutter ───────────────────────────────────────────────────────────
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+dart_tool/
+
+# Generated code (keep .g.dart and .freezed.dart committed)
+# (intentionally not ignoring *.g.dart — needed for build)
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.fleet/
+
+# ── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# ── Android ───────────────────────────────────────────────────────────────────
+android/.gradle/
+android/local.properties
+android/key.properties
+android/app/google-services.json
+android/captures/
+android/gradlew
+android/gradlew.bat
+**/android/**/GeneratedPluginRegistrant.java
+
+# ── iOS ───────────────────────────────────────────────────────────────────────
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Flutter/app.flx
+ios/Flutter/app.zip
+ios/Pods/
+ios/*.mode1v3
+ios/*.mode2v3
+ios/*.moved-aside
+ios/*.pbxuser
+ios/*.perspectivev3
+ios/xcuserdata/
+ios/**/*.xcscmblueprint
+ios/**/*.xccheckout
+ios/Runner/GeneratedPluginRegistrant.*
+ios/GoogleService-Info.plist
+
+# ── Secrets / env ─────────────────────────────────────────────────────────────
+.env
+.env.*
+*.pem
+*.p8
+*.p12
+*.jks
+*.keystore
+google-services.json
+GoogleService-Info.plist
+secrets.yaml
+
+# ── Seed output ───────────────────────────────────────────────────────────────
+scripts/seed_recipes.json
+
+# ── Graphify ──────────────────────────────────────────────────────────────────
+graphify-out/
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.log
+*.lock.json
+coverage/
+.coverage
