@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CookScroll — graphify tree viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      margin: 20px 0 0 24px;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #1e3a56;
+    }
+    .controls {
+      margin: 20px 0 15px 24px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 18px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    button:active {
+      background: #004085;
+    }
+    #tree-container {
+      width: calc(100vw - 48px); /* Adjust for body margin/padding */
+      height: 85vh;
+      overflow: auto;
+      border-radius: 8px;
+      background: #fff;
+      margin-left: 24px;
+      margin-right: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid #ddd;
+    }
+    svg {
+      background: #fff;
+      border-radius: 8px;
+      display: block; /* Important for D3 */
+    }
+    .node circle {
+      stroke-width: 2.5px;
+    }
+    .node text { /* Base style for the <text> container */
+      font: 13px 'Segoe UI', sans-serif;
+      paint-order: stroke fill; /* Ensures text is readable over lines */
+      stroke: #fff; /* White halo */
+      stroke-width: 3px; /* Halo thickness */
+      stroke-linejoin: round;
+      stroke-opacity: 0.85; /* Halo opacity */
+    }
+    .link {
+      fill: none;
+      stroke-opacity: 0.7;
+      stroke-width: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CookScroll — Knowledge Graph</h1>
+  <div class="controls">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+    <button onclick="resetView()">Reset View</button>
+  </div>
+  <div id="tree-container">
+    <svg id="tree-svg" width="6000" height="8000"></svg>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    const initialJsonData = {"name":"CookScroll","total_count":347,"children":[{"name":".claude","total_count":2,"children":[{"name":"settings.local.json","total_count":2,"children":[{"name":"allow","total_count":1,"children":[]},{"name":"permissions","total_count":1,"children":[]}]}]},{"name":"analysis_options.yaml","total_count":1,"children":[{"name":"Dart Analysis + Linting Config (flutter_lints)","total_count":1,"children":[]}]},{"name":"android","total_count":9,"children":[{"name":"app","total_count":7,"children":[{"name":"build.gradle.kts","total_count":1,"children":[{"name":"Android App Build Config","total_count":1,"children":[]}]},{"name":"src","total_count":6,"children":[{"name":"main","total_count":6,"children":[{"name":"java","total_count":4,"children":[{"name":"io","total_count":4,"children":[{"name":"flutter","total_count":4,"children":[{"name":"plugins","total_count":4,"children":[{"name":"GeneratedPluginRegistrant.java","total_count":4,"children":[{"name":".registerWith()","total_count":1,"children":[]},{"name":"FlutterEngine","total_count":1,"children":[]},{"name":"GeneratedPluginRegistrant","total_count":1,"children":[]},{"name":"GeneratedPluginRegistrant (Android Flutter plugins)","total_count":1,"children":[]}]}]}]}]}]},{"name":"kotlin","total_count":2,"children":[{"name":"com","total_count":2,"children":[{"name":"cookscroll","total_count":2,"children":[{"name":"cookscroll","total_count":2,"children":[{"name":"MainActivity.kt","total_count":2,"children":[{"name":"MainActivity","total_count":1,"children":[]},{"name":"MainActivity (Android entry point)","total_count":1,"children":[]}]}]}]}]}]}]}]}]},{"name":"build.gradle.kts","total_count":1,"children":[{"name":"Android Root Build Config","total_count":1,"children":[]}]},{"name":"settings.gradle.kts","total_count":1,"children":[{"name":"Android Settings Gradle","total_count":1,"children":[]}]}]},{"name":"docs","total_count":140,"children":[{"name":"Cahier_des_Charges_CookScroll.md","total_count":10,"children":[{"name":"Cahier des Charges CookScroll","total_count":1,"children":[]},{"name":"Consolidated Shopping List Generation","total_count":1,"children":[]},{"name":"MVP V1 Scope","total_count":1,"children":[]},{"name":"Offline Mode (SQLite local cache)","total_count":1,"children":[]},{"name":"Persona: Antoine E. (student, gamification)","total_count":1,"children":[]},{"name":"Persona: Karenn S. (family planner, tight budget)","total_count":1,"children":[]},{"name":"Tech Stack: Flutter + Node.js/FastAPI + PostgreSQL + Redis","total_count":1,"children":[]},{"name":"TikTok-style Vertical Recipe Scroll","total_count":1,"children":[]},{"name":"V2 Social Features (out of MVP scope)","total_count":1,"children":[]},{"name":"Weekly Meal Planning (Menu de la semaine)","total_count":1,"children":[]}]},{"name":"maquettes","total_count":85,"children":[{"name":"cookscroll_logo","total_count":2,"children":[{"name":"code.html","total_count":1,"children":[{"name":"CookScroll Logo SVG (pot with steam)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":1,"children":[{"name":"CookScroll Logo","total_count":1,"children":[]}]}]},{"name":"create_recipe","total_count":4,"children":[{"name":"code.html","total_count":1,"children":[{"name":"Create Recipe UI (HTML/Tailwind mockup)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":3,"children":[{"name":"Feature: Create Recipe","total_count":1,"children":[]},{"name":"Screen: Create Recipe","total_count":1,"children":[]},{"name":"UI Component: Create Recipe Form (cover photo, title, ingredients, steps)","total_count":1,"children":[]}]}]},{"name":"culinary_flow","total_count":4,"children":[{"name":"DESIGN.md","total_count":4,"children":[{"name":"Color Palette: Vibrant Coral primary (#ae2f34), Warm Orange secondary","total_count":1,"children":[]},{"name":"Culinary Flow Design System","total_count":1,"children":[]},{"name":"Layout: Full-bleed vertical scroll, 20px container margin, 4px grid","total_count":1,"children":[]},{"name":"Typography: Montserrat (headlines) + Inter (body)","total_count":1,"children":[]}]}]},{"name":"filter_panel","total_count":11,"children":[{"name":"code.html","total_count":10,"children":[{"name":"Design System: Material Symbols Outlined Icons","total_count":1,"children":[]},{"name":"Design Token: Font Inter (body/labels)","total_count":1,"children":[]},{"name":"Design Token: Font Montserrat (display/headlines)","total_count":1,"children":[]},{"name":"Design Token: Primary Color #ae2f34 (red)","total_count":1,"children":[]},{"name":"Design Token: Secondary Container #fc9d41 (orange)","total_count":1,"children":[]},{"name":"Feature: Filter Recipes (macros, allergens, difficulty, prep time)","total_count":1,"children":[]},{"name":"Mockup: Filter Panel Screen","total_count":1,"children":[]},{"name":"Tech Stack: Tailwind CSS","total_count":1,"children":[]},{"name":"UI Component: Filter Bottom Sheet","total_count":1,"children":[]},{"name":"UI Component: Nutritional Macro Sliders (Protein, Carbs)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":1,"children":[{"name":"Screen: Filter Panel","total_count":1,"children":[]}]}]},{"name":"my_recipes","total_count":5,"children":[{"name":"code.html","total_count":4,"children":[{"name":"Feature: Save/Bookmark Recipes","total_count":1,"children":[]},{"name":"Mockup: My Recipes Screen","total_count":1,"children":[]},{"name":"Navigation: Recipes Tab","total_count":1,"children":[]},{"name":"UI Component: Recipe Card (image + overlay + tag)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":1,"children":[{"name":"Screen: My Recipes","total_count":1,"children":[]}]}]},{"name":"onboarding_dietary_preferences","total_count":4,"children":[{"name":"code.html","total_count":3,"children":[{"name":"Mockup: Onboarding Dietary Preferences Screen","total_count":1,"children":[]},{"name":"UI Component: Dietary Preference Chips (gluten-free, lactose-free, vegan, vegetarian, nut-free, keto)","total_count":1,"children":[]},{"name":"UI Component: Onboarding Progress Bar","total_count":1,"children":[]}]},{"name":"screen.png","total_count":1,"children":[{"name":"Screen: Onboarding Dietary Preferences","total_count":1,"children":[]}]}]},{"name":"onboarding_skill_level","total_count":3,"children":[{"name":"code.html","total_count":2,"children":[{"name":"Mockup: Onboarding Skill Level Screen","total_count":1,"children":[]},{"name":"UI Component: Skill Level Selection Cards (Beginner/Intermediate/Advanced)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":1,"children":[{"name":"Screen: Onboarding Skill Level","total_count":1,"children":[]}]}]},{"name":"onboarding_welcome","total_count":4,"children":[{"name":"code.html","total_count":3,"children":[{"name":"CookScroll App","total_count":1,"children":[]},{"name":"Feature: Onboarding Flow (welcome, dietary prefs, skill level)","total_count":1,"children":[]},{"name":"Mockup: Onboarding Welcome Screen","total_count":1,"children":[]}]},{"name":"screen.png","total_count":1,"children":[{"name":"Screen: Onboarding Welcome","total_count":1,"children":[]}]}]},{"name":"profile_settings","total_count":6,"children":[{"name":"code.html","total_count":5,"children":[{"name":"Feature: Streak Counter & Achievement Badges","total_count":1,"children":[]},{"name":"Feature: User Profile & Preferences","total_count":1,"children":[]},{"name":"Mockup: Profile Settings Screen","total_count":1,"children":[]},{"name":"Navigation: Profile Tab","total_count":1,"children":[]},{"name":"UI Component: Profile Hero (avatar + streak counter + achievements)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":1,"children":[{"name":"Screen: Profile Settings","total_count":1,"children":[]}]}]},{"name":"recipe_detail","total_count":4,"children":[{"name":"code.html","total_count":3,"children":[{"name":"Feature: Nutritional Macros Display (kcal, prot, carb, fat)","total_count":1,"children":[]},{"name":"Mockup: Recipe Detail Screen","total_count":1,"children":[]},{"name":"UI Component: Recipe Detail Bottom Sheet","total_count":1,"children":[]}]},{"name":"screen.png","total_count":1,"children":[{"name":"Screen: Recipe Detail","total_count":1,"children":[]}]}]},{"name":"recipe_feed","total_count":11,"children":[{"name":"code.html","total_count":7,"children":[{"name":"Design Pattern: Glassmorphism (backdrop blur overlays)","total_count":1,"children":[]},{"name":"Feature: Recipe Scroll Feed","total_count":1,"children":[]},{"name":"Mockup: Recipe Feed Screen","total_count":1,"children":[]},{"name":"Navigation: Feed Tab","total_count":1,"children":[]},{"name":"UI Component: Bottom Navigation Bar (Feed/Recipes/Menu/List/Profile)","total_count":1,"children":[]},{"name":"UI Component: Top AppBar (CookScroll branding)","total_count":1,"children":[]},{"name":"UI Component: Vertical Scroll Feed (TikTok-style snap)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":4,"children":[{"name":"Bottom Navigation Bar - Feed, Recipes, Menu, List, Profile tabs","total_count":1,"children":[]},{"name":"Concept: Bottom Navigation - 5-tab navigation pattern (Feed, Recipes, Menu, List, Profile) shared across screens","total_count":1,"children":[]},{"name":"Recipe Card - Summer Harvest Poke Bowl, 15min, Beginner, Protein/Carbs/Fat macros, like count 2.4k","total_count":1,"children":[]},{"name":"Recipe Feed Screen - Main TikTok-style feed with fullscreen recipe card, nutrition info, like/save actions, bottom nav","total_count":1,"children":[]}]}]},{"name":"search_recipes","total_count":6,"children":[{"name":"code.html","total_count":3,"children":[{"name":"Feature: Search Recipes","total_count":1,"children":[]},{"name":"Mockup: Search Recipes Screen","total_count":1,"children":[]},{"name":"UI Component: Search Bar with Recent Searches and Results Grid","total_count":1,"children":[]}]},{"name":"screen.png","total_count":3,"children":[{"name":"Recent Searches - Truffle Pasta, Vegan Ramen, Quick Dinner chips with clear action","total_count":1,"children":[]},{"name":"Search Recipes Screen - Search bar, recent searches chips, grid results (124 found)","total_count":1,"children":[]},{"name":"Search Results Grid - 2-column grid showing Avocado Tomato, Spicy Vegan Tofu Ramen, Fresh Basil Margherita, Seared Salmon with Quinoa","total_count":1,"children":[]}]}]},{"name":"shopping_list","total_count":7,"children":[{"name":"code.html","total_count":4,"children":[{"name":"Feature: Shopping List Generation","total_count":1,"children":[]},{"name":"Mockup: Shopping List Screen","total_count":1,"children":[]},{"name":"Navigation: List Tab (Shopping)","total_count":1,"children":[]},{"name":"UI Component: Shopping List Sections (Produce/Meat/Dairy with checkboxes)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":3,"children":[{"name":"Shopping Categories - Fruits & Vegetables, Meat & Proteins, Dairy & Eggs with add item per category","total_count":1,"children":[]},{"name":"Shopping List Screen - Categorized checklist (Fruits & Vegetables, Meat & Proteins, Dairy & Eggs), weekly prep summary","total_count":1,"children":[]},{"name":"Weekly Prep Summary Banner - 7 recipes, 43 items for Next Week's Prep","total_count":1,"children":[]}]}]},{"name":"sign_up_login","total_count":5,"children":[{"name":"code.html","total_count":3,"children":[{"name":"Feature: Authentication (Sign In/Sign Up, Apple, Google)","total_count":1,"children":[]},{"name":"Mockup: Sign Up / Login Screen","total_count":1,"children":[]},{"name":"UI Component: Sign In/Up Form (email, password, Apple/Google SSO)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":2,"children":[{"name":"OAuth Providers - Apple Sign In and Google Sign In buttons","total_count":1,"children":[]},{"name":"Sign Up / Login Screen - Welcome Back, email/password form, Sign In CTA, Apple/Google OAuth, Sign Up link","total_count":1,"children":[]}]}]},{"name":"weekly_menu_plan","total_count":9,"children":[{"name":"code.html","total_count":5,"children":[{"name":"Feature: Weekly Menu Planning","total_count":1,"children":[]},{"name":"Mockup: Weekly Menu Plan Screen","total_count":1,"children":[]},{"name":"Navigation: Menu Tab","total_count":1,"children":[]},{"name":"UI Component: Generate List FAB (floating action button)","total_count":1,"children":[]},{"name":"UI Component: Weekly Day Strip (Mon-Sun date chips)","total_count":1,"children":[]}]},{"name":"screen.png","total_count":4,"children":[{"name":"Concept: Weekly Menu to Shopping List Flow - Generate List action converts meal plan into categorized shopping list","total_count":1,"children":[]},{"name":"Generate List Button - CTA to convert weekly menu to shopping list","total_count":1,"children":[]},{"name":"Weekly Calendar Strip - October 21-25 week navigation","total_count":1,"children":[]},{"name":"Weekly Menu Plan Screen - Calendar week strip, meal slots (Breakfast/Lunch/Dinner/Snacks), Generate List CTA","total_count":1,"children":[]}]}]}]},{"name":"Schema_BDD_CookScroll.md","total_count":9,"children":[{"name":"DB Table: allergens","total_count":1,"children":[]},{"name":"DB Table: ingredients","total_count":1,"children":[]},{"name":"DB Table: recipes","total_count":1,"children":[]},{"name":"DB Table: shopping_lists + shopping_list_items","total_count":1,"children":[]},{"name":"DB Table: users","total_count":1,"children":[]},{"name":"DB Table: weekly_menus + menu_entries","total_count":1,"children":[]},{"name":"DB Tables: user_streaks + badges + user_badges","total_count":1,"children":[]},{"name":"Schema BDD CookScroll (PostgreSQL DDL)","total_count":1,"children":[]},{"name":"SQL Query: Aggregate shopping list from weekly menu","total_count":1,"children":[]}]},{"name":"SFD_CookScroll.md","total_count":4,"children":[{"name":"CU-01: Scroll and Save Recipe","total_count":1,"children":[]},{"name":"CU-02: Generate Shopping List","total_count":1,"children":[]},{"name":"CU-03: User Registration and Login","total_count":1,"children":[]},{"name":"Spécifications Fonctionnelles Détaillées CookScroll","total_count":1,"children":[]}]},{"name":"SFG_CookScroll.md","total_count":15,"children":[{"name":"EF01: Recipe Scroll Feed","total_count":1,"children":[]},{"name":"EF02: Filter Recipes (macros, allergens)","total_count":1,"children":[]},{"name":"EF03: Save / Like Recipe","total_count":1,"children":[]},{"name":"EF04: View Recipe Detail","total_count":1,"children":[]},{"name":"EF05: Weekly Menu Planning","total_count":1,"children":[]},{"name":"EF06: Generate Shopping List","total_count":1,"children":[]},{"name":"EF07: Create Private Recipes","total_count":1,"children":[]},{"name":"EF08: Auth (email / Apple / Google SSO)","total_count":1,"children":[]},{"name":"EF09: Onboarding Tutorial","total_count":1,"children":[]},{"name":"EF10: Offline Mode","total_count":1,"children":[]},{"name":"EF11: Recipe Search","total_count":1,"children":[]},{"name":"ENF02: Scroll transition < 300ms","total_count":1,"children":[]},{"name":"ENF06: RGPD compliance + JWT auth","total_count":1,"children":[]},{"name":"ENF08: Backend availability >= 99.5%","total_count":1,"children":[]},{"name":"Spécifications Fonctionnelles Générales CookScroll","total_count":1,"children":[]}]},{"name":"Spécifications Fonctionnelles (Détaillée et Générale).pdf","total_count":17,"children":[{"name":"Concept: Batch Cooking","total_count":1,"children":[]},{"name":"Drive Partner Integration (Leclerc, Carrefour)","total_count":1,"children":[]},{"name":"ENF: Accessibilité daltonisme","total_count":1,"children":[]},{"name":"ENF: Portabilité iOS et Android","total_count":1,"children":[]},{"name":"Gamification: Streak & Badges","total_count":1,"children":[]},{"name":"Lancement 2 (social, drive)","total_count":1,"children":[]},{"name":"MVP / Lancement 1","total_count":1,"children":[]},{"name":"Persona: Antoine (étudiant, gamification)","total_count":1,"children":[]},{"name":"Persona: Karenn (planification familiale)","total_count":1,"children":[]},{"name":"Processus: Filtres macronutriments et allergènes","total_count":1,"children":[]},{"name":"Processus: Génération liste de courses consolidée","total_count":1,"children":[]},{"name":"Processus: Scroll de recettes (TikTok-style)","total_count":1,"children":[]},{"name":"Profil Chef (V2)","total_count":1,"children":[]},{"name":"Spécifications Fonctionnelles Générales - CookScroll","total_count":1,"children":[]},{"name":"Use Case Diagram (MVP + Lancement 2)","total_count":1,"children":[]},{"name":"User Story Map (Annexes)","total_count":1,"children":[]},{"name":"Vision: Scroll. Cook. Shop.","total_count":1,"children":[]}]}]},{"name":"ios","total_count":39,"children":[{"name":"Flutter","total_count":10,"children":[{"name":"ephemeral","total_count":6,"children":[{"name":"flutter_lldb_helper.py","total_count":6,"children":[{"name":"__lldb_init_module()","total_count":1,"children":[]},{"name":"flutter_lldb_helper.py - LLDB debug helper for Flutter iOS RX pages breakpoint interception","total_count":1,"children":[]},{"name":"handle_new_rx_page()","total_count":1,"children":[]},{"name":"Intercept NOTIFY_DEBUGGER_ABOUT_RX_PAGES and touch the pages.","total_count":1,"children":[]},{"name":"SBDebugger","total_count":1,"children":[]},{"name":"SBFrame","total_count":1,"children":[]}]}]},{"name":"flutter_export_environment.sh","total_count":4,"children":[{"name":"flutter_export_environment.sh - Shell script exporting Flutter build environment variables for iOS","total_count":1,"children":[]},{"name":"flutter_export_environment.sh script","total_count":1,"children":[]},{"name":"FLUTTER_ROOT=/opt/homebrew/share/flutter","total_count":1,"children":[]},{"name":"FLUTTER_TARGET=lib/main.dart - Flutter entry point","total_count":1,"children":[]}]}]},{"name":"Runner","total_count":26,"children":[{"name":"AppDelegate.swift","total_count":7,"children":[{"name":".application()","total_count":1,"children":[]},{"name":"Any","total_count":1,"children":[]},{"name":"AppDelegate","total_count":1,"children":[]},{"name":"AppDelegate.swift - Flutter iOS app entry point, registers Flutter plugins","total_count":1,"children":[]},{"name":"Bool","total_count":1,"children":[]},{"name":"Concept: CookScroll App - Flutter-based mobile cooking app with recipe feed, search, weekly menu planning, shopping list, auth","total_count":1,"children":[]},{"name":"UIApplication","total_count":1,"children":[]}]},{"name":"Assets.xcassets","total_count":10,"children":[{"name":"AppIcon.appiconset","total_count":5,"children":[{"name":"Contents.json","total_count":5,"children":[{"name":"AppIcon Contents.json - iOS app icon asset catalog for iPhone and iPad sizes","total_count":1,"children":[]},{"name":"author","total_count":1,"children":[]},{"name":"images","total_count":1,"children":[]},{"name":"info","total_count":1,"children":[]},{"name":"version","total_count":1,"children":[]}]}]},{"name":"LaunchImage.imageset","total_count":5,"children":[{"name":"Contents.json","total_count":5,"children":[{"name":"author","total_count":1,"children":[]},{"name":"images","total_count":1,"children":[]},{"name":"info","total_count":1,"children":[]},{"name":"LaunchImage Contents.json - iOS launch screen image asset catalog (1x/2x/3x universal)","total_count":1,"children":[]},{"name":"version","total_count":1,"children":[]}]}]}]},{"name":"GeneratedPluginRegistrant.h","total_count":1,"children":[{"name":"GeneratedPluginRegistrant.h - Objective-C header declaring plugin registration interface","total_count":1,"children":[]}]},{"name":"GeneratedPluginRegistrant.m","total_count":7,"children":[{"name":"-registerWithRegistry","total_count":1,"children":[]},{"name":"flutter_secure_storage iOS plugin","total_count":1,"children":[]},{"name":"GeneratedPluginRegistrant","total_count":1,"children":[]},{"name":"GeneratedPluginRegistrant.m - Registers flutter_secure_storage, path_provider_foundation, sqflite, sqlite3_flutter_libs plugins","total_count":1,"children":[]},{"name":"path_provider_foundation iOS plugin","total_count":1,"children":[]},{"name":"sqflite_darwin iOS plugin - SQLite database support","total_count":1,"children":[]},{"name":"sqlite3_flutter_libs iOS plugin - SQLite3 native library","total_count":1,"children":[]}]},{"name":"Runner-Bridging-Header.h","total_count":1,"children":[{"name":"Runner-Bridging-Header.h - Swift/ObjC bridging header importing GeneratedPluginRegistrant","total_count":1,"children":[]}]}]},{"name":"RunnerTests","total_count":3,"children":[{"name":"RunnerTests.swift","total_count":3,"children":[{"name":".testExample()","total_count":1,"children":[]},{"name":"RunnerTests","total_count":1,"children":[]},{"name":"RunnerTests.swift - XCTest suite for iOS Runner app (placeholder)","total_count":1,"children":[]}]}]}]},{"name":"lib","total_count":144,"children":[{"name":"core","total_count":37,"children":[{"name":"constants","total_count":10,"children":[{"name":"api_constants.dart","total_count":10,"children":[{"name":"ApiConstants","total_count":1,"children":[]},{"name":"mealById","total_count":1,"children":[]},{"name":"mealCategories","total_count":1,"children":[]},{"name":"mealDbBaseUrl","total_count":1,"children":[]},{"name":"mealsByCategory","total_count":1,"children":[]},{"name":"randomMeal","total_count":1,"children":[]},{"name":"searchMeals","total_count":1,"children":[]},{"name":"TheMealDB external API (base URL + endpoints)","total_count":1,"children":[]},{"name":"USDA FoodData Central API (nutrition data)","total_count":1,"children":[]},{"name":"usdaBaseUrl","total_count":1,"children":[]}]}]},{"name":"router","total_count":9,"children":[{"name":"app_router.dart","total_count":7,"children":[{"name":"__","total_count":1,"children":[]},{"name":"appRouter","total_count":1,"children":[]},{"name":"appRouterProvider","total_count":1,"children":[]},{"name":"go_router navigation pattern (context.go + GoRoute declarations)","total_count":1,"children":[]},{"name":"Onboarding Flow (3-step: Welcome -> Dietary -> Skill -> Feed)","total_count":1,"children":[]},{"name":"Onboarding Navigation Flow (/onboarding -> /onboarding/dietary -> /onboarding/skill -> /feed)","total_count":1,"children":[]},{"name":"ShellRoute (MainScaffold wrapping authenticated routes)","total_count":1,"children":[]}]},{"name":"app_router.g.dart","total_count":2,"children":[{"name":"appRouterProvider","total_count":1,"children":[]},{"name":"AppRouterRef","total_count":1,"children":[]}]}]},{"name":"theme","total_count":18,"children":[{"name":"app_colors.dart","total_count":16,"children":[{"name":"AppColors","total_count":1,"children":[]},{"name":"background","total_count":1,"children":[]},{"name":"badgeBeginner","total_count":1,"children":[]},{"name":"badgeEasy","total_count":1,"children":[]},{"name":"badgeHealthy","total_count":1,"children":[]},{"name":"error","total_count":1,"children":[]},{"name":"primary","total_count":1,"children":[]},{"name":"primaryDark","total_count":1,"children":[]},{"name":"primaryLight","total_count":1,"children":[]},{"name":"success","total_count":1,"children":[]},{"name":"surface","total_count":1,"children":[]},{"name":"surfaceVariant","total_count":1,"children":[]},{"name":"textOnPrimary","total_count":1,"children":[]},{"name":"textPrimary","total_count":1,"children":[]},{"name":"textSecondary","total_count":1,"children":[]},{"name":"warning","total_count":1,"children":[]}]},{"name":"app_theme.dart","total_count":2,"children":[{"name":"AppTheme","total_count":1,"children":[]},{"name":"light","total_count":1,"children":[]}]}]}]},{"name":"features","total_count":79,"children":[{"name":"auth","total_count":56,"children":[{"name":"presentation","total_count":56,"children":[{"name":"providers","total_count":14,"children":[{"name":"onboarding_provider.dart","total_count":12,"children":[{"name":"build","total_count":1,"children":[]},{"name":"copyWith","total_count":1,"children":[]},{"name":"OnboardingNotifier","total_count":1,"children":[]},{"name":"OnboardingNotifier (Riverpod @riverpod notifier)","total_count":1,"children":[]},{"name":"onboardingNotifierProvider","total_count":1,"children":[]},{"name":"OnboardingState","total_count":1,"children":[]},{"name":"OnboardingState (selectedAllergens, skillLevel)","total_count":1,"children":[]},{"name":"Riverpod @riverpod code-gen pattern (AutoDisposeNotifier + generated provider)","total_count":1,"children":[]},{"name":"selectedAllergens","total_count":1,"children":[]},{"name":"setSkillLevel","total_count":1,"children":[]},{"name":"skillLevel","total_count":1,"children":[]},{"name":"toggleAllergen","total_count":1,"children":[]}]},{"name":"onboarding_provider.g.dart","total_count":2,"children":[{"name":"onboardingNotifierProvider","total_count":1,"children":[]},{"name":"onboardingNotifierProvider (AutoDisposeNotifierProvider)","total_count":1,"children":[]}]}]},{"name":"screens","total_count":42,"children":[{"name":"login_screen.dart","total_count":18,"children":[{"name":"_emailCtrl","total_count":1,"children":[]},{"name":"_FieldLabel","total_count":1,"children":[]},{"name":"_formKey","total_count":1,"children":[]},{"name":"_isSignUp","total_count":1,"children":[]},{"name":"_LoginScreenState","total_count":1,"children":[]},{"name":"_obscurePassword","total_count":1,"children":[]},{"name":"_passwordCtrl","total_count":1,"children":[]},{"name":"_SocialButton","total_count":1,"children":[]},{"name":"_submit","total_count":1,"children":[]},{"name":"build","total_count":1,"children":[]},{"name":"createState","total_count":1,"children":[]},{"name":"dispose","total_count":1,"children":[]},{"name":"icon","total_count":1,"children":[]},{"name":"label","total_count":1,"children":[]},{"name":"LoginScreen","total_count":1,"children":[]},{"name":"LoginScreen","total_count":1,"children":[]},{"name":"onTap","total_count":1,"children":[]},{"name":"text","total_count":1,"children":[]}]},{"name":"onboarding_dietary_screen.dart","total_count":9,"children":[{"name":"_AllergenChip","total_count":1,"children":[]},{"name":"_allergens","total_count":1,"children":[]},{"name":"build","total_count":1,"children":[]},{"name":"icon","total_count":1,"children":[]},{"name":"isSelected","total_count":1,"children":[]},{"name":"label","total_count":1,"children":[]},{"name":"OnboardingDietaryScreen","total_count":1,"children":[]},{"name":"OnboardingDietaryScreen","total_count":1,"children":[]},{"name":"onTap","total_count":1,"children":[]}]},{"name":"onboarding_skill_screen.dart","total_count":10,"children":[{"name":"_LevelCard","total_count":1,"children":[]},{"name":"_levels","total_count":1,"children":[]},{"name":"build","total_count":1,"children":[]},{"name":"icon","total_count":1,"children":[]},{"name":"isSelected","total_count":1,"children":[]},{"name":"label","total_count":1,"children":[]},{"name":"OnboardingSkillScreen","total_count":1,"children":[]},{"name":"OnboardingSkillScreen","total_count":1,"children":[]},{"name":"onTap","total_count":1,"children":[]},{"name":"subtitle","total_count":1,"children":[]}]},{"name":"onboarding_welcome_screen.dart","total_count":5,"children":[{"name":"_FeatureCard","total_count":1,"children":[]},{"name":"_Logo","total_count":1,"children":[]},{"name":"build","total_count":1,"children":[]},{"name":"OnboardingWelcomeScreen","total_count":1,"children":[]},{"name":"OnboardingWelcomeScreen","total_count":1,"children":[]}]}]}]}]},{"name":"feed","total_count":4,"children":[{"name":"presentation","total_count":4,"children":[{"name":"screens","total_count":4,"children":[{"name":"feed_screen.dart","total_count":4,"children":[{"name":"build","total_count":1,"children":[]},{"name":"FeedScreen","total_count":1,"children":[]},{"name":"FeedScreen (placeholder)","total_count":1,"children":[]},{"name":"Placeholder screens pattern (coming soon body)","total_count":1,"children":[]}]}]}]}]},{"name":"menu","total_count":3,"children":[{"name":"presentation","total_count":3,"children":[{"name":"screens","total_count":3,"children":[{"name":"weekly_menu_screen.dart","total_count":3,"children":[{"name":"build","total_count":1,"children":[]},{"name":"WeeklyMenuScreen","total_count":1,"children":[]},{"name":"WeeklyMenuScreen (placeholder)","total_count":1,"children":[]}]}]}]}]},{"name":"profile","total_count":3,"children":[{"name":"presentation","total_count":3,"children":[{"name":"screens","total_count":3,"children":[{"name":"profile_screen.dart","total_count":3,"children":[{"name":"build","total_count":1,"children":[]},{"name":"ProfileScreen","total_count":1,"children":[]},{"name":"ProfileScreen (placeholder)","total_count":1,"children":[]}]}]}]}]},{"name":"recipes","total_count":10,"children":[{"name":"presentation","total_count":10,"children":[{"name":"screens","total_count":10,"children":[{"name":"create_recipe_screen.dart","total_count":3,"children":[{"name":"build","total_count":1,"children":[]},{"name":"CreateRecipeScreen","total_count":1,"children":[]},{"name":"CreateRecipeScreen (placeholder)","total_count":1,"children":[]}]},{"name":"my_recipes_screen.dart","total_count":3,"children":[{"name":"build","total_count":1,"children":[]},{"name":"MyRecipesScreen","total_count":1,"children":[]},{"name":"MyRecipesScreen (placeholder)","total_count":1,"children":[]}]},{"name":"recipe_detail_screen.dart","total_count":4,"children":[{"name":"build","total_count":1,"children":[]},{"name":"RecipeDetailScreen","total_count":1,"children":[]},{"name":"RecipeDetailScreen (partial — accepts recipeId)","total_count":1,"children":[]},{"name":"recipeId","total_count":1,"children":[]}]}]}]}]},{"name":"shopping_list","total_count":3,"children":[{"name":"presentation","total_count":3,"children":[{"name":"screens","total_count":3,"children":[{"name":"shopping_list_screen.dart","total_count":3,"children":[{"name":"build","total_count":1,"children":[]},{"name":"ShoppingListScreen","total_count":1,"children":[]},{"name":"ShoppingListScreen (placeholder)","total_count":1,"children":[]}]}]}]}]}]},{"name":"main.dart","total_count":9,"children":[{"name":"appRouterProvider (ref.watch)","total_count":1,"children":[]},{"name":"AppTheme.light","total_count":1,"children":[]},{"name":"build","total_count":1,"children":[]},{"name":"Clean architecture / feature-based structure","total_count":1,"children":[]},{"name":"CookScrollApp","total_count":1,"children":[]},{"name":"CookScrollApp","total_count":1,"children":[]},{"name":"main","total_count":1,"children":[]},{"name":"main()","total_count":1,"children":[]},{"name":"ProviderScope (entry point)","total_count":1,"children":[]}]},{"name":"shared","total_count":19,"children":[{"name":"widgets","total_count":19,"children":[{"name":"dots_indicator.dart","total_count":6,"children":[{"name":"AppColors (used in DotsIndicator)","total_count":1,"children":[]},{"name":"build","total_count":1,"children":[]},{"name":"current","total_count":1,"children":[]},{"name":"DotsIndicator","total_count":1,"children":[]},{"name":"DotsIndicator","total_count":1,"children":[]},{"name":"total","total_count":1,"children":[]}]},{"name":"main_scaffold.dart","total_count":13,"children":[{"name":"_currentIndex","total_count":1,"children":[]},{"name":"_navItem","total_count":1,"children":[]},{"name":"BottomNavigationBar (5 tabs)","total_count":1,"children":[]},{"name":"build","total_count":1,"children":[]},{"name":"child","total_count":1,"children":[]},{"name":"GoRouter shell route pattern (MainScaffold wraps child)","total_count":1,"children":[]},{"name":"MainScaffold","total_count":1,"children":[]},{"name":"MainScaffold","total_count":1,"children":[]},{"name":"Route /feed (index 0)","total_count":1,"children":[]},{"name":"Route /list (index 3)","total_count":1,"children":[]},{"name":"Route /menu (index 2)","total_count":1,"children":[]},{"name":"Route /profile (index 4)","total_count":1,"children":[]},{"name":"Route /recipes (index 1)","total_count":1,"children":[]}]}]}]}]},{"name":"pubspec.yaml","total_count":9,"children":[{"name":"cached_network_image (recipe photo caching)","total_count":1,"children":[]},{"name":"CookScroll Flutter Project","total_count":1,"children":[]},{"name":"dio (HTTP networking)","total_count":1,"children":[]},{"name":"drift (local SQLite database)","total_count":1,"children":[]},{"name":"flutter_riverpod (state management)","total_count":1,"children":[]},{"name":"flutter_secure_storage (auth token storage)","total_count":1,"children":[]},{"name":"freezed + json_serializable (data classes)","total_count":1,"children":[]},{"name":"go_router (navigation)","total_count":1,"children":[]},{"name":"google_fonts (typography)","total_count":1,"children":[]}]},{"name":"README.md","total_count":1,"children":[{"name":"CookScroll App","total_count":1,"children":[]}]},{"name":"test","total_count":2,"children":[{"name":"widget_test.dart","total_count":2,"children":[{"name":"App smoke test (widget_test)","total_count":1,"children":[]},{"name":"main","total_count":1,"children":[]}]}]}]};
+
+    function transformData(jsonData) {
+        // Helper function to recursively build the children structure
+        function processNode(node, parentL1StageName) {
+            let displayName = node.name;
+            // Append total_count if it exists and is not already in the name
+            if (node.total_count !== undefined) {
+                if (!/\(Total Count: \d+\)$/.test(displayName)) {
+                    displayName += ` (Total Count: ${node.total_count})`;
+                }
+            }
+
+            const newNode = { name: displayName };
+
+            if (parentL1StageName === "Root") {
+                 newNode.originalStageName = node.name;
+            } else {
+                newNode.originalStageName = parentL1StageName;
+            }
+
+            if (node.children && node.children.length > 0) {
+                const stageNameToPass = (parentL1StageName === "Root") ? node.name : parentL1StageName;
+                newNode.children = node.children.map(child => processNode(child, stageNameToPass));
+            }
+
+            return newNode;
+        }
+
+        let rootDisplayName = jsonData.name;
+        if (jsonData.total_count !== undefined && !/\(Total Count: \d+\)$/.test(rootDisplayName)) {
+            rootDisplayName += ` (Total Count: ${jsonData.total_count})`;
+        }
+
+        return {
+            name: rootDisplayName,
+            originalStageName: "Root",
+            children: (jsonData.children || []).map(child => processNode(child, "Root"))
+        };
+    }
+
+    const treeData = transformData(initialJsonData);
+
+    // Auto-populated phaseColors: every depth-1 child of the root gets
+    // a stable colour from a bigger palette so all top-level dirs are
+    // distinguishable.
+    const PALETTE = [
+      ["#3498DB","#2980B9","#AED6F1"], ["#2ECC71","#27AE60","#A9DFBF"],
+      ["#E74C3C","#C0392B","#F5B7B1"], ["#9B59B6","#8E44AD","#D7BDE2"],
+      ["#F39C12","#D68910","#FAD7A0"], ["#1ABC9C","#117864","#A2D9CE"],
+      ["#34495E","#1B2631","#ABB2B9"], ["#E67E22","#BA4A00","#F5CBA7"],
+      ["#16A085","#0E6655","#A2D9CE"], ["#D35400","#A04000","#EDBB99"],
+      ["#7F8C8D","#566573","#D5DBDB"], ["#C0392B","#7B241C","#F5B7B1"],
+      ["#2E86C1","#1B4F72","#A9CCE3"], ["#28B463","#196F3D","#A9DFBF"],
+      ["#AF7AC5","#6C3483","#D2B4DE"],
+    ];
+    const phaseColors = { "Root": { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+                          "Default": { fill: "#BDC3C7", stroke: "#95A5A6", collapsedFill: "#ECF0F1" } };
+    (initialJsonData.children || []).forEach((c, i) => {
+      const pal = PALETTE[i % PALETTE.length];
+      phaseColors[c.name] = { fill: pal[0], stroke: pal[1], collapsedFill: pal[2] };
+    });
+
+    const levelSpecificPalettes = {
+      0: { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+      2: { fill: "#6ab04c", stroke: "#508a38", collapsedFill: "#a3d391" },
+      3: { fill: "#f0932b", stroke: "#d0730f", collapsedFill: "#f6c07e" },
+      4: { fill: "#be2edd", stroke: "#a01cb3", collapsedFill: "#e08bf2" },
+      5: { fill: "#00a8ff", stroke: "#007ac1", collapsedFill: "#74d2ff" },
+      6: { fill: "#e55039", stroke: "#c23620", collapsedFill: "#f09a8d" },
+      default: { fill: "#747d8c", stroke: "#57606f", collapsedFill: "#a4b0be" }
+    };
+
+    const svgElement = d3.select("#tree-svg");
+    const initialSvgWidth = +svgElement.attr("width");
+    const initialSvgHeight = +svgElement.attr("height");
+    const margin = { top: 40, right: 120, bottom: 80, left: 450 };
+    let width = initialSvgWidth - margin.left - margin.right;
+    let height = initialSvgHeight - margin.top - margin.bottom;
+    const duration = 500;
+    let nodeCounter = 0;
+    const g = svgElement.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const treemap = d3.tree().nodeSize([40, 0]);
+    let rootNode = d3.hierarchy(treeData, d => d.children);
+    rootNode.x0 = 0;
+    rootNode.y0 = 0;
+
+    if (rootNode.children) {
+      rootNode.children.forEach(d_child => {
+        if (d_child.children) { collapseBranch(d_child); }
+      });
+    }
+    updateTree(rootNode);
+
+    function collapseBranch(d) { if (d.children) { d._children = d.children; d._children.forEach(collapseBranch); d.children = null; } }
+    function expandBranch(d) { if (d._children) { d.children = d._children; d._children = null; } if (d.children) { d.children.forEach(expandBranch); } }
+    window.expandAll = () => { expandBranch(rootNode); updateTree(rootNode); };
+    window.collapseAll = () => { if (rootNode.children) { rootNode.children.forEach(collapseBranch); } updateTree(rootNode); };
+    window.resetView = () => { if (rootNode.children) { rootNode.children.forEach(d_child => { if (d_child.children || d_child._children) { collapseBranch(d_child); } }); } if (rootNode._children && !rootNode.children) { rootNode.children = rootNode._children; rootNode._children = null; } updateTree(rootNode); };
+
+    function updateTree(source) {
+      const treeLayoutData = treemap(rootNode);
+      let nodes = treeLayoutData.descendants();
+      let links = treeLayoutData.descendants().slice(1);
+
+      let minX = 0;
+      let maxX = 0;
+      if (nodes.length > 0) {
+        minX = d3.min(nodes, d => d.x);
+        maxX = d3.max(nodes, d => d.x);
+      }
+
+      let neededHeight = Math.max(initialSvgHeight, maxX - minX + margin.top + margin.bottom + 100);
+      svgElement.transition().duration(duration / 2).attr("height", neededHeight);
+      g.transition().duration(duration / 2).attr("transform", `translate(${margin.left},${margin.top - minX + 40})`);
+
+      nodes.forEach(d => { d.y = d.depth * 400; }); // Adjust horizontal separation if needed
+
+      const node = g.selectAll('g.node').data(nodes, d => d.id || (d.id = ++nodeCounter));
+      const nodeEnter = node.enter().append('g')
+        .attr('class', d => "node" + (d.children || d._children ? " node--internal" : " node--leaf") + (d._children ? " _children" : ""))
+        .attr('transform', d => `translate(${source.y0},${source.x0})`)
+        .on('click', (event, d) => { if (d.children) { d._children = d.children; d.children = null; } else if (d._children) { d.children = d._children; d._children = null; } updateTree(d); })
+        .style('cursor', d => (d.children || d._children) ? 'pointer' : 'default');
+
+      nodeEnter.append('circle').attr('r', 1e-6);
+
+      nodeEnter.append('text')
+        .attr('dy', '.35em')
+        .attr('x', d => d.children || d._children ? -14 : 14)
+        .attr('text-anchor', d => d.children || d._children ? 'end' : 'start')
+        .style("fill-opacity", 1e-6)
+        .call(wrapText, 380);
+
+      const nodeUpdate = nodeEnter.merge(node);
+      nodeUpdate.transition().duration(duration)
+        .attr('transform', d => `translate(${d.y},${d.x})`)
+        .attr('class', d => "node" + (d.children ? " node--internal" : " node--leaf") + (d._children ? " node--internal _children" : ""));
+
+      nodeUpdate.select('circle').attr('r', 8.5)
+        .style('fill', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            if (d._children) return palette.collapsedFill;
+            if (d.children) return palette.fill;
+            return "#fff";
+        })
+        .style('stroke', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            return palette.stroke;
+        });
+      nodeUpdate.select('text').style("fill-opacity", 1).call(wrapText, 380);
+
+      const nodeExit = node.exit().transition().duration(duration).attr('transform', d => `translate(${source.y},${source.x})`).remove();
+      nodeExit.select('circle').attr('r', 1e-6);
+      nodeExit.select('text').style('fill-opacity', 1e-6);
+
+      const link = g.selectAll('path.link').data(links, d => d.id);
+      const linkEnter = link.enter().insert('path', "g").attr('class', 'link').attr('d', d => { const o = { x: source.x0, y: source.y0 }; return diagonal(o, o); });
+
+      linkEnter.merge(link).transition().duration(duration).attr('d', d => diagonal(d, d.parent))
+        .style('stroke', d => {
+            const sourceNode = d.parent;
+            if (!sourceNode) return phaseColors.Default.stroke;
+            const l1AncestorName = sourceNode.data.originalStageName;
+            const colorPalette = phaseColors[l1AncestorName] || phaseColors.Default;
+            return colorPalette.stroke;
+        });
+      link.exit().transition().duration(duration).attr('d', d => { const o = { x: source.x, y: source.y }; return diagonal(o, o); }).remove();
+      nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
+    }
+
+    function diagonal(s, d) { return `M ${s.y} ${s.x} C ${(s.y + d.y) / 2} ${s.x}, ${(s.y + d.y) / 2} ${d.x}, ${d.y} ${d.x}`; }
+
+    function wrapText(textElements, maxWidth) {
+        const textPartColors = {
+            name: '#343a40',
+            count: '#0056b3'
+        };
+        const countRegex = /(\s\(Total Count: \d+\))$/;
+
+        textElements.each(function () {
+            const textD3 = d3.select(this);
+            const originalNodeText = textD3.datum().data.name;
+            const x = parseFloat(textD3.attr("x") || 0);
+            const initialDy = textD3.attr("dy");
+            const textAnchor = textD3.attr("text-anchor");
+            const lineHeight = 1.1;
+
+            textD3.text(null);
+
+            let namePart = originalNodeText;
+            let countPartText = "";
+
+            const countMatch = originalNodeText.match(countRegex);
+            if (countMatch && originalNodeText.endsWith(countMatch[0])) {
+                namePart = originalNodeText.substring(0, originalNodeText.length - countMatch[0].length).trim();
+                countPartText = countMatch[0].trim();
+            }
+
+            const tokens = [];
+            namePart.split(/\s+/).filter(Boolean).forEach(word => {
+                tokens.push({ text: word, type: 'name' });
+            });
+            if (countPartText) {
+                tokens.push({ text: countPartText, type: 'count' });
+            }
+
+            if (tokens.length === 0 && originalNodeText) {
+                tokens.push({ text: originalNodeText, type: 'name' });
+            }
+
+            let currentTspan = textD3.append("tspan").attr("x", x).attr("dy", initialDy);
+            if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+
+            let lineTokens = [];
+
+            for (let i = 0; i < tokens.length; i++) {
+                const tokenObj = tokens[i];
+
+                lineTokens.push(tokenObj);
+                currentTspan.text(lineTokens.map(t => t.text).join(" "));
+
+                if (currentTspan.node().getComputedTextLength() > maxWidth && lineTokens.length > 1) {
+                    lineTokens.pop();
+
+                    currentTspan.text(null);
+                    lineTokens.forEach((prevToken, idx) => {
+                        currentTspan.append("tspan")
+                            .text((idx > 0 ? " " : "") + prevToken.text)
+                            .style("fill", textPartColors[prevToken.type] || textPartColors.name)
+                            .style("font-weight", prevToken.type === 'count' ? "bold" : "normal");
+                    });
+
+                    lineTokens = [tokenObj];
+                    currentTspan = textD3.append("tspan").attr("x", x).attr("dy", lineHeight + "em");
+                    if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+                }
+            }
+
+            currentTspan.text(null);
+            lineTokens.forEach((token, idx) => {
+                currentTspan.append("tspan")
+                    .text((idx > 0 ? " " : "") + token.text)
+                    .style("fill", textPartColors[token.type] || textPartColors.name)
+                    .style("font-weight", token.type === 'count' ? "bold" : "normal");
+            });
+
+            if (textD3.selectAll("tspan > tspan").empty() && textD3.select("tspan").text().length === 0 && originalNodeText) {
+                let t = textD3.select("tspan");
+                let displayText = originalNodeText;
+                t.text(displayText).style("fill", textPartColors.name);
+                if (t.node() && t.node().getComputedTextLength() > maxWidth && displayText.length > 20) {
+                    let estimatedChars = Math.floor(maxWidth / (t.node().getComputedTextLength()/displayText.length) );
+                    displayText = displayText.substring(0, Math.max(0, estimatedChars - 3)) + "...";
+                    t.text(displayText);
+                }
+            }
+        });
+    }
+  </script>
+</body>
+</html>

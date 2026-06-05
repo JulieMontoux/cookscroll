@@ -1,0 +1,647 @@
+{
+  "nodes": [
+    {
+      "id": "main_cookscrollapp",
+      "label": "CookScrollApp",
+      "file_type": "code",
+      "source_file": "lib/main.dart",
+      "source_location": "line 22",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_providerscope",
+      "label": "ProviderScope (entry point)",
+      "file_type": "code",
+      "source_file": "lib/main.dart",
+      "source_location": "line 19",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_main_fn",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "lib/main.dart",
+      "source_location": "line 8",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_approuterprovider",
+      "label": "appRouterProvider (ref.watch)",
+      "file_type": "code",
+      "source_file": "lib/main.dart",
+      "source_location": "line 27",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_apptheme_light",
+      "label": "AppTheme.light",
+      "file_type": "code",
+      "source_file": "lib/main.dart",
+      "source_location": "line 30",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_scaffold_mainscaffold",
+      "label": "MainScaffold",
+      "file_type": "code",
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 5",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_scaffold_bottomnav",
+      "label": "BottomNavigationBar (5 tabs)",
+      "file_type": "code",
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 31",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_scaffold_route_feed",
+      "label": "Route /feed (index 0)",
+      "file_type": "concept",
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 12",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_scaffold_route_recipes",
+      "label": "Route /recipes (index 1)",
+      "file_type": "concept",
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 13",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_scaffold_route_menu",
+      "label": "Route /menu (index 2)",
+      "file_type": "concept",
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 14",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_scaffold_route_list",
+      "label": "Route /list (index 3)",
+      "file_type": "concept",
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 15",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_scaffold_route_profile",
+      "label": "Route /profile (index 4)",
+      "file_type": "concept",
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 16",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dots_indicator_dotsindicator",
+      "label": "DotsIndicator",
+      "file_type": "code",
+      "source_file": "lib/shared/widgets/dots_indicator.dart",
+      "source_location": "line 4",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dots_indicator_appcolors",
+      "label": "AppColors (used in DotsIndicator)",
+      "file_type": "code",
+      "source_file": "lib/shared/widgets/dots_indicator.dart",
+      "source_location": "line 2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feed_screen_feedscreen",
+      "label": "FeedScreen (placeholder)",
+      "file_type": "code",
+      "source_file": "lib/features/feed/presentation/screens/feed_screen.dart",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "weekly_menu_screen_weeklymenuscreen",
+      "label": "WeeklyMenuScreen (placeholder)",
+      "file_type": "code",
+      "source_file": "lib/features/menu/presentation/screens/weekly_menu_screen.dart",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "profile_screen_profilescreen",
+      "label": "ProfileScreen (placeholder)",
+      "file_type": "code",
+      "source_file": "lib/features/profile/presentation/screens/profile_screen.dart",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "create_recipe_screen_createrecipescreen",
+      "label": "CreateRecipeScreen (placeholder)",
+      "file_type": "code",
+      "source_file": "lib/features/recipes/presentation/screens/create_recipe_screen.dart",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_recipes_screen_myrecipesscreen",
+      "label": "MyRecipesScreen (placeholder)",
+      "file_type": "code",
+      "source_file": "lib/features/recipes/presentation/screens/my_recipes_screen.dart",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "recipe_detail_screen_recipedetailscreen",
+      "label": "RecipeDetailScreen (partial — accepts recipeId)",
+      "file_type": "code",
+      "source_file": "lib/features/recipes/presentation/screens/recipe_detail_screen.dart",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shopping_list_screen_shoppinglistscreen",
+      "label": "ShoppingListScreen (placeholder)",
+      "file_type": "code",
+      "source_file": "lib/features/shopping_list/presentation/screens/shopping_list_screen.dart",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "widget_test_smoketest",
+      "label": "App smoke test (widget_test)",
+      "file_type": "code",
+      "source_file": "test/widget_test.dart",
+      "source_location": "line 15",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_placeholder_screens",
+      "label": "Placeholder screens pattern (coming soon body)",
+      "file_type": "concept",
+      "source_file": "lib/features/feed/presentation/screens/feed_screen.dart",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_clean_architecture",
+      "label": "Clean architecture / feature-based structure",
+      "file_type": "concept",
+      "source_file": "lib/main.dart",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_gorouter_shell",
+      "label": "GoRouter shell route pattern (MainScaffold wraps child)",
+      "file_type": "concept",
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "main_main_fn",
+      "target": "main_providerscope",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": "line 19",
+      "weight": 1.0
+    },
+    {
+      "source": "main_providerscope",
+      "target": "main_cookscrollapp",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": "line 19",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cookscrollapp",
+      "target": "main_approuterprovider",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": "line 27",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cookscrollapp",
+      "target": "main_apptheme_light",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": "line 30",
+      "weight": 1.0
+    },
+    {
+      "source": "main_scaffold_mainscaffold",
+      "target": "main_scaffold_bottomnav",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 31",
+      "weight": 1.0
+    },
+    {
+      "source": "main_scaffold_mainscaffold",
+      "target": "main_scaffold_route_feed",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 12",
+      "weight": 1.0
+    },
+    {
+      "source": "main_scaffold_mainscaffold",
+      "target": "main_scaffold_route_recipes",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 13",
+      "weight": 1.0
+    },
+    {
+      "source": "main_scaffold_mainscaffold",
+      "target": "main_scaffold_route_menu",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 14",
+      "weight": 1.0
+    },
+    {
+      "source": "main_scaffold_mainscaffold",
+      "target": "main_scaffold_route_list",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 15",
+      "weight": 1.0
+    },
+    {
+      "source": "main_scaffold_mainscaffold",
+      "target": "main_scaffold_route_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 16",
+      "weight": 1.0
+    },
+    {
+      "source": "main_scaffold_route_feed",
+      "target": "feed_screen_feedscreen",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 35",
+      "weight": 0.95
+    },
+    {
+      "source": "main_scaffold_route_recipes",
+      "target": "my_recipes_screen_myrecipesscreen",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 36",
+      "weight": 0.85
+    },
+    {
+      "source": "main_scaffold_route_menu",
+      "target": "weekly_menu_screen_weeklymenuscreen",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 37",
+      "weight": 0.95
+    },
+    {
+      "source": "main_scaffold_route_list",
+      "target": "shopping_list_screen_shoppinglistscreen",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 38",
+      "weight": 0.95
+    },
+    {
+      "source": "main_scaffold_route_profile",
+      "target": "profile_screen_profilescreen",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 39",
+      "weight": 0.95
+    },
+    {
+      "source": "dots_indicator_dotsindicator",
+      "target": "dots_indicator_appcolors",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/dots_indicator.dart",
+      "source_location": "line 17",
+      "weight": 1.0
+    },
+    {
+      "source": "main_scaffold_mainscaffold",
+      "target": "dots_indicator_appcolors",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 3",
+      "weight": 1.0
+    },
+    {
+      "source": "feed_screen_feedscreen",
+      "target": "concept_placeholder_screens",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/feed/presentation/screens/feed_screen.dart",
+      "source_location": "line 11",
+      "weight": 0.95
+    },
+    {
+      "source": "weekly_menu_screen_weeklymenuscreen",
+      "target": "concept_placeholder_screens",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/menu/presentation/screens/weekly_menu_screen.dart",
+      "source_location": "line 11",
+      "weight": 0.95
+    },
+    {
+      "source": "profile_screen_profilescreen",
+      "target": "concept_placeholder_screens",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/profile/presentation/screens/profile_screen.dart",
+      "source_location": "line 11",
+      "weight": 0.95
+    },
+    {
+      "source": "create_recipe_screen_createrecipescreen",
+      "target": "concept_placeholder_screens",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/recipes/presentation/screens/create_recipe_screen.dart",
+      "source_location": "line 11",
+      "weight": 0.95
+    },
+    {
+      "source": "my_recipes_screen_myrecipesscreen",
+      "target": "concept_placeholder_screens",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/recipes/presentation/screens/my_recipes_screen.dart",
+      "source_location": "line 11",
+      "weight": 0.95
+    },
+    {
+      "source": "shopping_list_screen_shoppinglistscreen",
+      "target": "concept_placeholder_screens",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/shopping_list/presentation/screens/shopping_list_screen.dart",
+      "source_location": "line 11",
+      "weight": 0.95
+    },
+    {
+      "source": "recipe_detail_screen_recipedetailscreen",
+      "target": "concept_placeholder_screens",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "lib/features/recipes/presentation/screens/recipe_detail_screen.dart",
+      "source_location": "line 11",
+      "weight": 0.75
+    },
+    {
+      "source": "main_scaffold_mainscaffold",
+      "target": "concept_gorouter_shell",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": "line 10",
+      "weight": 0.95
+    },
+    {
+      "source": "concept_gorouter_shell",
+      "target": "main_approuterprovider",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "lib/shared/widgets/main_scaffold.dart",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "main_cookscrollapp",
+      "target": "concept_clean_architecture",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "lib/main.dart",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "widget_test_smoketest",
+      "target": "main_cookscrollapp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "test/widget_test.dart",
+      "source_location": "line 17",
+      "weight": 1.0
+    },
+    {
+      "source": "widget_test_smoketest",
+      "target": "main_providerscope",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "test/widget_test.dart",
+      "source_location": "line 17",
+      "weight": 1.0
+    },
+    {
+      "source": "dots_indicator_dotsindicator",
+      "target": "concept_clean_architecture",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "lib/shared/widgets/dots_indicator.dart",
+      "source_location": null,
+      "weight": 0.65
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "he_main_wiring",
+      "label": "App entry wiring: main() → ProviderScope → CookScrollApp → appRouterProvider → MaterialApp.router",
+      "nodes": [
+        "main_main_fn",
+        "main_providerscope",
+        "main_cookscrollapp",
+        "main_approuterprovider",
+        "main_apptheme_light"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart"
+    },
+    {
+      "id": "he_bottomnav_routes",
+      "label": "MainScaffold bottom nav connects 5 routes to feature screens",
+      "nodes": [
+        "main_scaffold_mainscaffold",
+        "main_scaffold_route_feed",
+        "main_scaffold_route_recipes",
+        "main_scaffold_route_menu",
+        "main_scaffold_route_list",
+        "main_scaffold_route_profile"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/main_scaffold.dart"
+    },
+    {
+      "id": "he_placeholder_screens",
+      "label": "All feature screens are placeholders ('coming soon') except RecipeDetailScreen which accepts recipeId param",
+      "nodes": [
+        "feed_screen_feedscreen",
+        "weekly_menu_screen_weeklymenuscreen",
+        "profile_screen_profilescreen",
+        "create_recipe_screen_createrecipescreen",
+        "my_recipes_screen_myrecipesscreen",
+        "recipe_detail_screen_recipedetailscreen",
+        "shopping_list_screen_shoppinglistscreen",
+        "concept_placeholder_screens"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/feed/presentation/screens/feed_screen.dart"
+    },
+    {
+      "id": "he_shared_appcolors",
+      "label": "Shared widgets (DotsIndicator, MainScaffold) both consume AppColors from core/theme",
+      "nodes": [
+        "dots_indicator_dotsindicator",
+        "main_scaffold_mainscaffold",
+        "dots_indicator_appcolors"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/shared/widgets/dots_indicator.dart"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

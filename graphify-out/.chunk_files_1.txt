@@ -1,0 +1,22 @@
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/filter_panel/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/my_recipes/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/onboarding_dietary_preferences/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/onboarding_skill_level/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/onboarding_welcome/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/profile_settings/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/recipe_detail/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/recipe_feed/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/search_recipes/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/shopping_list/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/sign_up_login/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/weekly_menu_plan/code.html
+/Users/montouxjulie/Desktop/cookscroll/docs/Spécifications Fonctionnelles (Détaillée et Générale).pdf
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/cookscroll_logo/screen.png
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/create_recipe/screen.png
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/filter_panel/screen.png
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/my_recipes/screen.png
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/onboarding_dietary_preferences/screen.png
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/onboarding_skill_level/screen.png
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/onboarding_welcome/screen.png
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/profile_settings/screen.png
+/Users/montouxjulie/Desktop/cookscroll/docs/maquettes/recipe_detail/screen.png

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CookScroll Onboarding - Skill Level</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#00504c",
+                    "on-tertiary-fixed": "#00201e",
+                    "surface-container": "#e8eff1",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#ffb3b0",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "on-background": "#161d1f",
+                    "surface": "#f4fafd",
+                    "secondary": "#8f4e00",
+                    "inverse-on-surface": "#ebf2f4",
+                    "tertiary-container": "#1eada5",
+                    "surface-tint": "#ae2f34",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#dde4e6",
+                    "surface-variant": "#dde4e6",
+                    "on-primary-fixed-variant": "#8c1520",
+                    "on-primary-fixed": "#410006",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e2e9ec",
+                    "outline": "#8c706f",
+                    "primary-container": "#ff6b6b",
+                    "on-secondary-fixed": "#2e1500",
+                    "secondary-fixed-dim": "#ffb77a",
+                    "on-surface-variant": "#584140",
+                    "secondary-fixed": "#ffdcc2",
+                    "on-primary-container": "#6d0010",
+                    "on-secondary-fixed-variant": "#6d3a00",
+                    "on-tertiary-container": "#003a37",
+                    "surface-dim": "#d4dbdd",
+                    "surface-container-low": "#eef5f7",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e0bfbd",
+                    "inverse-surface": "#2b3234",
+                    "on-secondary-container": "#6b3900",
+                    "secondary-container": "#fc9d41",
+                    "tertiary": "#006a65",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdad8",
+                    "on-surface": "#161d1f",
+                    "background": "#f4fafd",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#7cf6ec",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#5dd9d0",
+                    "surface-bright": "#f4fafd",
+                    "primary": "#ae2f34",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "container-margin": "20px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "gutter": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "label-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .skill-card-selected {
+            border: 2px solid theme('colors.primary');
+            background-color: theme('colors.surface-container-high');
+            transform: scale(1.02);
+        }
+        .glass-scrim {
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center px-container-margin py-sm">
+<button class="flex items-center justify-center p-2 text-primary active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary">CookScroll</span>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-1 mt-20 px-container-margin pb-32 max-w-xl mx-auto w-full">
+<!-- Progress Bar Indicator -->
+<div class="w-full h-1 bg-surface-container-highest rounded-full mb-xl overflow-hidden">
+<div class="h-full bg-secondary-container w-2/3 transition-all duration-500"></div>
+</div>
+<section class="space-y-sm mb-lg">
+<h1 class="font-headline-md text-headline-md text-on-surface">Choose your skill level</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">We'll tailor your recipe feed to match your culinary expertise.</p>
+</section>
+<!-- Skill Level Selection List -->
+<div class="space-y-md" id="skill-picker">
+<!-- Beginner Card -->
+<button class="w-full text-left group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-[0px_8px_24px_rgba(0,0,0,0.06)] border-2 border-transparent transition-all duration-300 active:scale-95" onclick="selectSkill(this)">
+<div class="flex items-center p-md gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Simple pasta" class="w-full h-full object-cover" data-alt="A close-up shot of a simple, beautifully plated pasta dish with fresh basil leaves. The lighting is bright and warm, emphasizing the textures of the home-cooked meal in a modern kitchen setting. The overall aesthetic is clean and inviting, consistent with a high-end food discovery app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD5raORa8RsXR-AjEC0KyJfke-Z4dbReGlhUMprDO1SBGeyEXwfCqXkZTd9Lmr7u6vr48ztl-0ZX_6SHYDe8ipG_nij0UEipP9_BxEEXUzW4aF93B6dAU87F94zaIr17bCcVn5KcBPdIKvsOjJsdSxFR6wl4h15NBFkkhL0AK2go2kRKaPeNeTlr7fvivBUfP2XRWl8vXzLduXElE_bRCqNbYSZbzMcDNwxE21D_WIYVMo-LnEPLTIAM2fA9BUJkhNGROmOCJQDmbm"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Beginner</h3>
+<span class="material-symbols-outlined text-primary opacity-0 group-[.skill-card-selected]:opacity-100" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">I'm just starting out and want easy, step-by-step guidance.</p>
+</div>
+</div>
+</button>
+<!-- Intermediate Card -->
+<button class="skill-card-selected w-full text-left group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-[0px_8px_24px_rgba(0,0,0,0.06)] border-2 border-transparent transition-all duration-300 active:scale-95" onclick="selectSkill(this)">
+<div class="flex items-center p-md gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Pan searing" class="w-full h-full object-cover" data-alt="Detailed view of a chef pan-searing fresh seasonal vegetables in a stainless steel pan. Steam rises gracefully under soft, directional studio lighting that highlights the vibrant colors and fresh ingredients. The mood is energetic and professional, perfect for a modern culinary platform targeting home cooks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc7Zy6lozD1wCXWRhoYooVKjo04r5T9bEfIFoeolrDyf-GSgI-AaVPCao27jVW7lY5wfKa0qOdItF9-DmT0D9rnwrHO4Titv06lBcE-v1U0T0pqApb9FbhJotT7DMMNOHK_8Cj8kG8nmambNaF574O6fmV-jW9HAv1PV3EzMHdHpTdY42gUskbmiCkeuBXOMEfiO3tZKsLFSIvmLriDiRA9ADfuXxPBvSyL-SdLZ22MRHJUm2zFPjumHGS3EmZmaduTCTmAwATb4UP"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Intermediate</h3>
+<span class="material-symbols-outlined text-primary opacity-100" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">I know the basics and love experimenting with new techniques.</p>
+</div>
+</div>
+</button>
+<!-- Advanced Card -->
+<button class="w-full text-left group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-[0px_8px_24px_rgba(0,0,0,0.06)] border-2 border-transparent transition-all duration-300 active:scale-95" onclick="selectSkill(this)">
+<div class="flex items-center p-md gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Gourmet plating" class="w-full h-full object-cover" data-alt="A sophisticated, high-end gourmet dish featuring intricate plating with microgreens and colorful sauce swirls. The background is a dark, moody granite countertop illuminated by a single warm spotlight. This visual communicates expertise, culinary art, and high-level cooking skills within a premium social cooking community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOopK8v5Z4YlQlZ0GMSwd8d7ZNHJIWjOcZ5fUsbY47FKVgQOkpy_HQA1v6kmB_X92oNIDk1-5N_5568Q2yxifWkcs-5F7L1vF3_wsZViB-w3hZe2iQFqU4NNPElomjUHN0ZTcjpo70ZeawjKDj2qAwulw16IJGmWNgqVLg9kFz2YkKCFL_JY20tY4tYq4cD5TeHpISTwkMyVrXb954WBiW2N8hIj8uj8V3F1rWkfcvXVC2SixaSL9RL1DqY_A9mIT_K4ng1lRyesEH"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Advanced</h3>
+<span class="material-symbols-outlined text-primary opacity-0 group-[.skill-card-selected]:opacity-100" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">I'm a confident cook looking for complex recipes and challenges.</p>
+</div>
+</div>
+</button>
+</div>
+</main>
+<!-- Fixed Action Button Area -->
+<footer class="fixed bottom-0 w-full bg-gradient-to-t from-background via-background to-transparent px-container-margin pb-10 pt-10">
+<div class="max-w-xl mx-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-headline-sm py-4 rounded-full shadow-lg hover:opacity-90 active:scale-95 transition-all duration-200 flex items-center justify-center gap-sm">
+<span>Let's go</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</footer>
+<script>
+        function selectSkill(element) {
+            // Remove selection from all cards
+            const cards = document.querySelectorAll('#skill-picker button');
+            cards.forEach(card => {
+                card.classList.remove('skill-card-selected');
+                const icon = card.querySelector('.material-symbols-outlined[data-icon=""]'); // Target check icon
+                // Manually handle the opacity since it's cleaner than complex group selectors in JS
+                const checkIcon = card.querySelector('span.material-symbols-outlined:last-of-type');
+                if(checkIcon) checkIcon.classList.add('opacity-0');
+            });
+
+            // Add selection to clicked card
+            element.classList.add('skill-card-selected');
+            const currentCheck = element.querySelector('span.material-symbols-outlined:last-of-type');
+            if(currentCheck) currentCheck.classList.remove('opacity-0');
+            
+            // Haptic feedback simulation
+            if (window.navigator.vibrate) {
+                window.navigator.vibrate(10);
+            }
+        }
+    </script>
+</body></html>

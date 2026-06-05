@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CookScroll - Sign In</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-scrim {
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+        }
+        .transition-all {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#00504c",
+                    "on-tertiary-fixed": "#00201e",
+                    "surface-container": "#e8eff1",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#ffb3b0",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "on-background": "#161d1f",
+                    "surface": "#f4fafd",
+                    "secondary": "#8f4e00",
+                    "inverse-on-surface": "#ebf2f4",
+                    "tertiary-container": "#1eada5",
+                    "surface-tint": "#ae2f34",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#dde4e6",
+                    "surface-variant": "#dde4e6",
+                    "on-primary-fixed-variant": "#8c1520",
+                    "on-primary-fixed": "#410006",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e2e9ec",
+                    "outline": "#8c706f",
+                    "primary-container": "#ff6b6b",
+                    "on-secondary-fixed": "#2e1500",
+                    "secondary-fixed-dim": "#ffb77a",
+                    "on-surface-variant": "#584140",
+                    "secondary-fixed": "#ffdcc2",
+                    "on-primary-container": "#6d0010",
+                    "on-secondary-fixed-variant": "#6d3a00",
+                    "on-tertiary-container": "#003a37",
+                    "surface-dim": "#d4dbdd",
+                    "surface-container-low": "#eef5f7",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e0bfbd",
+                    "inverse-surface": "#2b3234",
+                    "on-secondary-container": "#6b3900",
+                    "secondary-container": "#fc9d41",
+                    "tertiary": "#006a65",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdad8",
+                    "on-surface": "#161d1f",
+                    "background": "#f4fafd",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#7cf6ec",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#5dd9d0",
+                    "surface-bright": "#f4fafd",
+                    "primary": "#ae2f34",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "container-margin": "20px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "gutter": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "label-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                    "label-lg": ["14px", { "lineHeight": "16px", "fontWeight": "600" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                    "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 flex justify-between items-center w-full px-container-margin py-sm bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md">
+<button class="p-2 rounded-full hover:bg-surface-variant/20 active:scale-95 transition-transform duration-200 text-primary dark:text-inverse-primary" onclick="history.back()">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-inverse-primary">CookScroll</span>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<main class="flex-grow flex flex-col items-center justify-center pt-xl px-container-margin pb-xl">
+<!-- Hero Decorative Section -->
+<div class="w-full max-w-md mb-lg text-center">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-sm" id="form-title">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant" id="form-subtitle">Your personal kitchen companion awaits.</p>
+</div>
+<div class="w-full max-w-md bg-surface-container-lowest rounded-xl shadow-[0px_8px_24px_rgba(0,0,0,0.06)] p-lg space-y-lg border border-outline-variant/30">
+<!-- Standard Form -->
+<form class="space-y-md" id="auth-form">
+<div class="space-y-xs">
+<label class="font-label-lg text-label-lg text-on-surface-variant ml-sm" for="email">Email Address</label>
+<input class="w-full px-md py-md rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md placeholder:text-outline-variant" id="email" placeholder="chef@cookscroll.com" type="email"/>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between items-center px-sm">
+<label class="font-label-lg text-label-lg text-on-surface-variant" for="password">Password</label>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">Forgot?</a>
+</div>
+<input class="w-full px-md py-md rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md placeholder:text-outline-variant" id="password" placeholder="••••••••" type="password"/>
+</div>
+<button class="w-full py-md rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm shadow-lg active:scale-95 transition-all duration-200" id="submit-btn" type="submit">
+                    Sign In
+                </button>
+</form>
+<div class="relative flex items-center py-sm">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-md font-label-md text-label-md text-outline">OR CONTINUE WITH</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- Social Buttons -->
+<div class="grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center gap-sm py-sm rounded-xl border border-outline-variant hover:bg-surface-variant/10 active:scale-95 transition-all duration-150">
+<img alt="Apple Logo" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtQ0Sp8e-7S6Onlyg1RMYvoQz20LOmwEVjStxoa6peNKgglelH1wm7ew_JlQLTTi9U67icEnGPpBKx_e8Wyg7bG8zY4awLOyxrCSKx-Y4XlOYnWqDqtqJTPMso5HEW5WfrZO6fBmRgOBeC4ccSxjtKBgNxxpkLznDkjRqQy7WXDlsY3_Mdt9ftD-Qz1NZbOZaPUy7cCUcy4pX-LUkPOsdZuwFbE4sYa7RonOZ7W4f4P-gua41xh4xZprpOEabi_IKylzUHdmkdMU_o"/>
+<span class="font-label-lg text-label-lg text-on-surface">Apple</span>
+</button>
+<button class="flex items-center justify-center gap-sm py-sm rounded-xl border border-outline-variant hover:bg-surface-variant/10 active:scale-95 transition-all duration-150">
+<img alt="Google Logo" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRIxZ43Wkjb7d95TLHSZkUr4rezrFw9WTMtXg7LDt_gEOXkvkWKEL8O7OIScQElJA8r4g7Olbs--qZYhBHbJLxPJDjbvjz11oSBpf4JuShdq25iI7WeEjsRARDFkomNHyHtik7P2SKpMiq5b0Klmvk_-CbTkjj0qBuQz4LJtvwj9KaY57RLI3BC8fyfO6DkTm0v5LrAgkhLt0i6_iQvVfQ8eo-ilBMwr4DZwCiV5INNES-QGkwajGcf3HzNziz4dAR6cHqxqH3dUUN"/>
+<span class="font-label-lg text-label-lg text-on-surface">Google</span>
+</button>
+</div>
+<!-- Switcher -->
+<div class="pt-sm text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="toggle-container">
+                    Don't have an account? 
+                    <button class="text-primary font-label-lg text-label-lg ml-xs hover:underline cursor-pointer" id="toggle-btn" onclick="toggleState()">Sign Up</button>
+</p>
+</div>
+</div>
+</main>
+<!-- Decorative Background Image (Asymmetric Placement) -->
+<div class="fixed bottom-0 right-0 w-1/3 h-1/2 -z-10 opacity-20 pointer-events-none overflow-hidden">
+<img class="w-full h-full object-cover rounded-tl-[120px]" data-alt="A macro photograph of fresh vibrant herbs and spices scattered artistically on a clean white marble countertop. The lighting is soft and natural, emphasizing the bright greens and earthy tones to match an energetic and fresh kitchen companion aesthetic. The composition is clean with significant whitespace, reflecting a modern minimalist design approach focused on quality culinary experiences." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgdjfEa6NOnAhwoMhID5jvX2VFdQZzIhTTs9AdXzjq8kH1lSDFBYqSWiR2cTtpRXU9SggK7C3iceaQpeots7_9vcRkBYqAvzMDvzd-NzBWdxVvB2WsOmawZQmteGRK_4UTtj5azC8USt3XRojWAKAPo4uOauXYsRZ_e_DsvPjzthCCoVFBzzvEUabxHUx6YTWYRMRXjGDHhnuv3VotnmLNTMihkpJXTUesLhprxTgVfhG6WjKJVPFeExjVpfsU46idKP-2w4LHwdPJ"/>
+</div>
+<script>
+        let isLogin = true;
+
+        function toggleState() {
+            isLogin = !isLogin;
+            const title = document.getElementById('form-title');
+            const subtitle = document.getElementById('form-subtitle');
+            const submitBtn = document.getElementById('submit-btn');
+            const toggleBtn = document.getElementById('toggle-btn');
+            const toggleContainer = document.getElementById('toggle-container');
+
+            if (isLogin) {
+                title.innerText = 'Welcome Back';
+                subtitle.innerText = 'Your personal kitchen companion awaits.';
+                submitBtn.innerText = 'Sign In';
+                toggleBtn.innerText = 'Sign Up';
+                toggleContainer.innerHTML = `Don't have an account? <button id="toggle-btn" class="text-primary font-label-lg text-label-lg ml-xs hover:underline cursor-pointer" onclick="toggleState()">Sign Up</button>`;
+            } else {
+                title.innerText = 'Join the Kitchen';
+                subtitle.innerText = 'Create an account to save your favorite recipes.';
+                submitBtn.innerText = 'Create Account';
+                toggleBtn.innerText = 'Log In';
+                toggleContainer.innerHTML = `Already have an account? <button id="toggle-btn" class="text-primary font-label-lg text-label-lg ml-xs hover:underline cursor-pointer" onclick="toggleState()">Log In</button>`;
+            }
+        }
+
+        // Handle form submission animation
+        document.getElementById('auth-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const originalText = btn.innerText;
+            btn.innerHTML = `<span class="inline-block animate-spin material-symbols-outlined" style="font-size: 20px;">progress_activity</span>`;
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Interaction demonstration complete.');
+            }, 1500);
+        });
+    </script>
+</body></html>

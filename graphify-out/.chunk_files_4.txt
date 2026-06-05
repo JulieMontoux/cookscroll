@@ -1,0 +1,11 @@
+/Users/montouxjulie/Desktop/cookscroll/lib/features/feed/presentation/screens/feed_screen.dart
+/Users/montouxjulie/Desktop/cookscroll/lib/features/menu/presentation/screens/weekly_menu_screen.dart
+/Users/montouxjulie/Desktop/cookscroll/lib/features/profile/presentation/screens/profile_screen.dart
+/Users/montouxjulie/Desktop/cookscroll/lib/features/recipes/presentation/screens/create_recipe_screen.dart
+/Users/montouxjulie/Desktop/cookscroll/lib/features/recipes/presentation/screens/my_recipes_screen.dart
+/Users/montouxjulie/Desktop/cookscroll/lib/features/recipes/presentation/screens/recipe_detail_screen.dart
+/Users/montouxjulie/Desktop/cookscroll/lib/features/shopping_list/presentation/screens/shopping_list_screen.dart
+/Users/montouxjulie/Desktop/cookscroll/lib/main.dart
+/Users/montouxjulie/Desktop/cookscroll/lib/shared/widgets/dots_indicator.dart
+/Users/montouxjulie/Desktop/cookscroll/lib/shared/widgets/main_scaffold.dart
+/Users/montouxjulie/Desktop/cookscroll/test/widget_test.dart

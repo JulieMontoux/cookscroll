@@ -1,0 +1,1556 @@
+{
+  "nodes": [
+    {
+      "id": "readme_cookscroll_app",
+      "label": "CookScroll App",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pubspec_cookscroll_project",
+      "label": "CookScroll Flutter Project",
+      "file_type": "code",
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pubspec_flutter_riverpod_dep",
+      "label": "flutter_riverpod (state management)",
+      "file_type": "concept",
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pubspec_go_router_dep",
+      "label": "go_router (navigation)",
+      "file_type": "concept",
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pubspec_dio_dep",
+      "label": "dio (HTTP networking)",
+      "file_type": "concept",
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pubspec_drift_dep",
+      "label": "drift (local SQLite database)",
+      "file_type": "concept",
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pubspec_flutter_secure_storage_dep",
+      "label": "flutter_secure_storage (auth token storage)",
+      "file_type": "concept",
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pubspec_freezed_dep",
+      "label": "freezed + json_serializable (data classes)",
+      "file_type": "concept",
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pubspec_google_fonts_dep",
+      "label": "google_fonts (typography)",
+      "file_type": "concept",
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pubspec_cached_network_image_dep",
+      "label": "cached_network_image (recipe photo caching)",
+      "file_type": "concept",
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "android_app_build_gradle_android_app",
+      "label": "Android App Build Config",
+      "file_type": "code",
+      "source_file": "android/app/build.gradle.kts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "android_app_generatedpluginregistrant_plugin_registrant",
+      "label": "GeneratedPluginRegistrant (Android Flutter plugins)",
+      "file_type": "code",
+      "source_file": "android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "android_mainactivity_main_activity",
+      "label": "MainActivity (Android entry point)",
+      "file_type": "code",
+      "source_file": "android/app/src/main/kotlin/com/cookscroll/cookscroll/MainActivity.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "android_build_gradle_android_root_build",
+      "label": "Android Root Build Config",
+      "file_type": "code",
+      "source_file": "android/build.gradle.kts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "android_settings_gradle_android_settings",
+      "label": "Android Settings Gradle",
+      "file_type": "code",
+      "source_file": "android/settings.gradle.kts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_cahier_des_charges_cookscroll_cdc",
+      "label": "Cahier des Charges CookScroll",
+      "file_type": "document",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "GAISNON Mathieu, MONTOUX Julie, CARION Paul, FARASSI Yassin",
+      "contributor": null
+    },
+    {
+      "id": "docs_cahier_des_charges_cookscroll_concept_tiktok_scroll",
+      "label": "TikTok-style Vertical Recipe Scroll",
+      "file_type": "concept",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_cahier_des_charges_cookscroll_concept_shopping_list",
+      "label": "Consolidated Shopping List Generation",
+      "file_type": "concept",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_cahier_des_charges_cookscroll_concept_weekly_menu",
+      "label": "Weekly Meal Planning (Menu de la semaine)",
+      "file_type": "concept",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_cahier_des_charges_cookscroll_concept_offline_mode",
+      "label": "Offline Mode (SQLite local cache)",
+      "file_type": "concept",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_cahier_des_charges_cookscroll_persona_karenn",
+      "label": "Persona: Karenn S. (family planner, tight budget)",
+      "file_type": "concept",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_cahier_des_charges_cookscroll_persona_antoine",
+      "label": "Persona: Antoine E. (student, gamification)",
+      "file_type": "concept",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_cahier_des_charges_cookscroll_concept_stack",
+      "label": "Tech Stack: Flutter + Node.js/FastAPI + PostgreSQL + Redis",
+      "file_type": "concept",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfd_cookscroll_sfd",
+      "label": "Spécifications Fonctionnelles Détaillées CookScroll",
+      "file_type": "document",
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "GAISNON Mathieu, MONTOUX Julie, CARION Paul, FARASSI Yassin",
+      "contributor": null
+    },
+    {
+      "id": "docs_sfd_cookscroll_cu01",
+      "label": "CU-01: Scroll and Save Recipe",
+      "file_type": "concept",
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfd_cookscroll_cu02",
+      "label": "CU-02: Generate Shopping List",
+      "file_type": "concept",
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfd_cookscroll_cu03",
+      "label": "CU-03: User Registration and Login",
+      "file_type": "concept",
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_sfg",
+      "label": "Spécifications Fonctionnelles Générales CookScroll",
+      "file_type": "document",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "GAISNON Mathieu, MONTOUX Julie, CARION Paul, FARASSI Yassin",
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef01",
+      "label": "EF01: Recipe Scroll Feed",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef02",
+      "label": "EF02: Filter Recipes (macros, allergens)",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef03",
+      "label": "EF03: Save / Like Recipe",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef04",
+      "label": "EF04: View Recipe Detail",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef05",
+      "label": "EF05: Weekly Menu Planning",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef06",
+      "label": "EF06: Generate Shopping List",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef07",
+      "label": "EF07: Create Private Recipes",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef08",
+      "label": "EF08: Auth (email / Apple / Google SSO)",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef09",
+      "label": "EF09: Onboarding Tutorial",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef10",
+      "label": "EF10: Offline Mode",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_ef11",
+      "label": "EF11: Recipe Search",
+      "file_type": "concept",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_enf02",
+      "label": "ENF02: Scroll transition < 300ms",
+      "file_type": "rationale",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_enf06",
+      "label": "ENF06: RGPD compliance + JWT auth",
+      "file_type": "rationale",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_sfg_cookscroll_enf08",
+      "label": "ENF08: Backend availability >= 99.5%",
+      "file_type": "rationale",
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_schema_bdd_cookscroll_schema",
+      "label": "Schema BDD CookScroll (PostgreSQL DDL)",
+      "file_type": "document",
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_schema_bdd_cookscroll_table_users",
+      "label": "DB Table: users",
+      "file_type": "concept",
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_schema_bdd_cookscroll_table_recipes",
+      "label": "DB Table: recipes",
+      "file_type": "concept",
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_schema_bdd_cookscroll_table_ingredients",
+      "label": "DB Table: ingredients",
+      "file_type": "concept",
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_schema_bdd_cookscroll_table_weekly_menus",
+      "label": "DB Table: weekly_menus + menu_entries",
+      "file_type": "concept",
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_schema_bdd_cookscroll_table_shopping_lists",
+      "label": "DB Table: shopping_lists + shopping_list_items",
+      "file_type": "concept",
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_schema_bdd_cookscroll_table_allergens",
+      "label": "DB Table: allergens",
+      "file_type": "concept",
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_schema_bdd_cookscroll_table_gamification",
+      "label": "DB Tables: user_streaks + badges + user_badges",
+      "file_type": "concept",
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_schema_bdd_cookscroll_query_shopping_list",
+      "label": "SQL Query: Aggregate shopping list from weekly menu",
+      "file_type": "concept",
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "maquettes_culinary_flow_design_system",
+      "label": "Culinary Flow Design System",
+      "file_type": "document",
+      "source_file": "docs/maquettes/culinary_flow/DESIGN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "maquettes_culinary_flow_concept_color_palette",
+      "label": "Color Palette: Vibrant Coral primary (#ae2f34), Warm Orange secondary",
+      "file_type": "concept",
+      "source_file": "docs/maquettes/culinary_flow/DESIGN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "maquettes_culinary_flow_concept_typography",
+      "label": "Typography: Montserrat (headlines) + Inter (body)",
+      "file_type": "concept",
+      "source_file": "docs/maquettes/culinary_flow/DESIGN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "maquettes_culinary_flow_concept_layout",
+      "label": "Layout: Full-bleed vertical scroll, 20px container margin, 4px grid",
+      "file_type": "concept",
+      "source_file": "docs/maquettes/culinary_flow/DESIGN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "maquettes_cookscroll_logo_code_logo",
+      "label": "CookScroll Logo SVG (pot with steam)",
+      "file_type": "code",
+      "source_file": "docs/maquettes/cookscroll_logo/code.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "maquettes_create_recipe_code_create_recipe_ui",
+      "label": "Create Recipe UI (HTML/Tailwind mockup)",
+      "file_type": "code",
+      "source_file": "docs/maquettes/create_recipe/code.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "analysis_options_dart_linting",
+      "label": "Dart Analysis + Linting Config (flutter_lints)",
+      "file_type": "code",
+      "source_file": "analysis_options.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_mvp_v1",
+      "label": "MVP V1 Scope",
+      "file_type": "concept",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_v2_social",
+      "label": "V2 Social Features (out of MVP scope)",
+      "file_type": "concept",
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "pubspec_cookscroll_project",
+      "target": "pubspec_flutter_riverpod_dep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pubspec_cookscroll_project",
+      "target": "pubspec_go_router_dep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pubspec_cookscroll_project",
+      "target": "pubspec_dio_dep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pubspec_cookscroll_project",
+      "target": "pubspec_drift_dep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pubspec_cookscroll_project",
+      "target": "pubspec_flutter_secure_storage_dep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pubspec_cookscroll_project",
+      "target": "pubspec_freezed_dep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pubspec_cookscroll_project",
+      "target": "pubspec_google_fonts_dep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pubspec_cookscroll_project",
+      "target": "pubspec_cached_network_image_dep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "android_app_generatedpluginregistrant_plugin_registrant",
+      "target": "pubspec_flutter_secure_storage_dep",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "android_app_generatedpluginregistrant_plugin_registrant",
+      "target": "pubspec_drift_dep",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "android_mainactivity_main_activity",
+      "target": "android_app_generatedpluginregistrant_plugin_registrant",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "android/app/src/main/kotlin/com/cookscroll/cookscroll/MainActivity.kt",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "android_app_build_gradle_android_app",
+      "target": "android_mainactivity_main_activity",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "android/app/build.gradle.kts",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "android_settings_gradle_android_settings",
+      "target": "android_app_build_gradle_android_app",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "android/settings.gradle.kts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "docs_sfg_cookscroll_sfg",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "docs_sfd_cookscroll_sfd",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "docs_cahier_des_charges_cookscroll_concept_tiktok_scroll",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "docs_cahier_des_charges_cookscroll_concept_shopping_list",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "docs_cahier_des_charges_cookscroll_concept_weekly_menu",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "docs_cahier_des_charges_cookscroll_concept_offline_mode",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "docs_cahier_des_charges_cookscroll_persona_karenn",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "docs_cahier_des_charges_cookscroll_persona_antoine",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "docs_cahier_des_charges_cookscroll_concept_stack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "concept_mvp_v1",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_cahier_des_charges_cookscroll_cdc",
+      "target": "concept_v2_social",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfd_cookscroll_sfd",
+      "target": "docs_sfg_cookscroll_sfg",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfd_cookscroll_sfd",
+      "target": "docs_sfd_cookscroll_cu01",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfd_cookscroll_sfd",
+      "target": "docs_sfd_cookscroll_cu02",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfd_cookscroll_sfd",
+      "target": "docs_sfd_cookscroll_cu03",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfd_cookscroll_cu01",
+      "target": "docs_sfg_cookscroll_ef01",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfd_cookscroll_cu01",
+      "target": "docs_sfg_cookscroll_ef03",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfd_cookscroll_cu01",
+      "target": "docs_sfg_cookscroll_ef10",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfd_cookscroll_cu02",
+      "target": "docs_sfg_cookscroll_ef06",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfd_cookscroll_cu02",
+      "target": "docs_sfg_cookscroll_ef05",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "docs_sfd_cookscroll_cu03",
+      "target": "docs_sfg_cookscroll_ef08",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef01",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef02",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef03",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef04",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef05",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef06",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef07",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef08",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef09",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef10",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_ef11",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_enf02",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_enf06",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_sfg",
+      "target": "docs_sfg_cookscroll_enf08",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_enf02",
+      "target": "docs_sfg_cookscroll_ef01",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_enf06",
+      "target": "docs_sfg_cookscroll_ef08",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_enf08",
+      "target": "docs_sfg_cookscroll_ef06",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_sfg_cookscroll_sfg",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_sfd_cookscroll_sfd",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_schema_bdd_cookscroll_table_users",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_schema_bdd_cookscroll_table_recipes",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_schema_bdd_cookscroll_table_ingredients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_schema_bdd_cookscroll_table_weekly_menus",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_schema_bdd_cookscroll_table_shopping_lists",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_schema_bdd_cookscroll_table_allergens",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_schema_bdd_cookscroll_table_gamification",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "docs_schema_bdd_cookscroll_query_shopping_list",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_table_weekly_menus",
+      "target": "docs_sfg_cookscroll_ef05",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_table_shopping_lists",
+      "target": "docs_sfg_cookscroll_ef06",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_table_users",
+      "target": "docs_sfg_cookscroll_ef08",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_query_shopping_list",
+      "target": "docs_sfd_cookscroll_cu02",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_schema",
+      "target": "pubspec_drift_dep",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "maquettes_culinary_flow_design_system",
+      "target": "maquettes_culinary_flow_concept_color_palette",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/culinary_flow/DESIGN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "maquettes_culinary_flow_design_system",
+      "target": "maquettes_culinary_flow_concept_typography",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/culinary_flow/DESIGN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "maquettes_culinary_flow_design_system",
+      "target": "maquettes_culinary_flow_concept_layout",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/culinary_flow/DESIGN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "maquettes_culinary_flow_concept_typography",
+      "target": "pubspec_google_fonts_dep",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/maquettes/culinary_flow/DESIGN.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "maquettes_create_recipe_code_create_recipe_ui",
+      "target": "maquettes_culinary_flow_design_system",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/create_recipe/code.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "maquettes_create_recipe_code_create_recipe_ui",
+      "target": "docs_sfg_cookscroll_ef07",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/maquettes/create_recipe/code.html",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "maquettes_cookscroll_logo_code_logo",
+      "target": "maquettes_culinary_flow_concept_color_palette",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/cookscroll_logo/code.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pubspec_cookscroll_project",
+      "target": "docs_cahier_des_charges_cookscroll_concept_stack",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "pubspec_flutter_secure_storage_dep",
+      "target": "docs_sfg_cookscroll_enf06",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "pubspec_drift_dep",
+      "target": "docs_cahier_des_charges_cookscroll_concept_offline_mode",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "pubspec.yaml",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "docs_sfg_cookscroll_ef01",
+      "target": "docs_cahier_des_charges_cookscroll_concept_tiktok_scroll",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_ef06",
+      "target": "docs_cahier_des_charges_cookscroll_concept_shopping_list",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_ef05",
+      "target": "docs_cahier_des_charges_cookscroll_concept_weekly_menu",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sfg_cookscroll_ef10",
+      "target": "docs_cahier_des_charges_cookscroll_concept_offline_mode",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_schema_bdd_cookscroll_table_gamification",
+      "target": "docs_cahier_des_charges_cookscroll_persona_antoine",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/Schema_BDD_CookScroll.md",
+      "source_location": null,
+      "weight": 0.75
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "he_core_mvp_features",
+      "label": "Core MVP Features: scroll, save, shopping list, weekly menu, auth, offline",
+      "nodes": [
+        "docs_sfg_cookscroll_ef01",
+        "docs_sfg_cookscroll_ef03",
+        "docs_sfg_cookscroll_ef05",
+        "docs_sfg_cookscroll_ef06",
+        "docs_sfg_cookscroll_ef08",
+        "docs_sfg_cookscroll_ef10"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SFG_CookScroll.md"
+    },
+    {
+      "id": "he_flutter_tech_stack",
+      "label": "Flutter Tech Stack: riverpod + go_router + drift + dio + secure_storage",
+      "nodes": [
+        "pubspec_cookscroll_project",
+        "pubspec_flutter_riverpod_dep",
+        "pubspec_go_router_dep",
+        "pubspec_drift_dep",
+        "pubspec_dio_dep",
+        "pubspec_flutter_secure_storage_dep"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pubspec.yaml"
+    },
+    {
+      "id": "he_design_system",
+      "label": "Culinary Flow Design System: colors, typography, layout applied in mockups",
+      "nodes": [
+        "maquettes_culinary_flow_design_system",
+        "maquettes_culinary_flow_concept_color_palette",
+        "maquettes_culinary_flow_concept_typography",
+        "maquettes_culinary_flow_concept_layout",
+        "maquettes_create_recipe_code_create_recipe_ui",
+        "maquettes_cookscroll_logo_code_logo"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/culinary_flow/DESIGN.md"
+    },
+    {
+      "id": "he_spec_docs_triad",
+      "label": "Specification Documents Triad: CDC + SFG + SFD",
+      "nodes": [
+        "docs_cahier_des_charges_cookscroll_cdc",
+        "docs_sfg_cookscroll_sfg",
+        "docs_sfd_cookscroll_sfd"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Cahier_des_Charges_CookScroll.md"
+    },
+    {
+      "id": "he_db_shopping_pipeline",
+      "label": "Shopping List DB Pipeline: weekly_menus -> menu_entries -> recipe_ingredients -> shopping_list",
+      "nodes": [
+        "docs_schema_bdd_cookscroll_table_weekly_menus",
+        "docs_schema_bdd_cookscroll_table_recipes",
+        "docs_schema_bdd_cookscroll_table_ingredients",
+        "docs_schema_bdd_cookscroll_table_shopping_lists",
+        "docs_schema_bdd_cookscroll_query_shopping_list"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/Schema_BDD_CookScroll.md"
+    }
+  ],
+  "input_tokens": 12800,
+  "output_tokens": 4200
+}

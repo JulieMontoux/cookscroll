@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CookScroll - Dietary Preferences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#00504c",
+                        "on-tertiary-fixed": "#00201e",
+                        "surface-container": "#e8eff1",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb3b0",
+                        "primary-fixed-dim": "#ffb3b0",
+                        "on-background": "#161d1f",
+                        "surface": "#f4fafd",
+                        "secondary": "#8f4e00",
+                        "inverse-on-surface": "#ebf2f4",
+                        "tertiary-container": "#1eada5",
+                        "surface-tint": "#ae2f34",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dde4e6",
+                        "surface-variant": "#dde4e6",
+                        "on-primary-fixed-variant": "#8c1520",
+                        "on-primary-fixed": "#410006",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e2e9ec",
+                        "outline": "#8c706f",
+                        "primary-container": "#ff6b6b",
+                        "on-secondary-fixed": "#2e1500",
+                        "secondary-fixed-dim": "#ffb77a",
+                        "on-surface-variant": "#584140",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-primary-container": "#6d0010",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "on-tertiary-container": "#003a37",
+                        "surface-dim": "#d4dbdd",
+                        "surface-container-low": "#eef5f7",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e0bfbd",
+                        "inverse-surface": "#2b3234",
+                        "on-secondary-container": "#6b3900",
+                        "secondary-container": "#fc9d41",
+                        "tertiary": "#006a65",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdad8",
+                        "on-surface": "#161d1f",
+                        "background": "#f4fafd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#7cf6ec",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#5dd9d0",
+                        "surface-bright": "#f4fafd",
+                        "primary": "#ae2f34",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "container-margin": "20px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "gutter": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chip-active {
+            background-color: #ff6b6b !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+        }
+        .step-progress-active {
+            background-color: #ae2f34;
+            height: 4px;
+            transition: width 0.3s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-background min-h-screen flex flex-col font-body-md">
+<!-- Progress Bar (Style Guidance: Thin orange bar at top) -->
+<div class="fixed top-0 left-0 w-full h-1 bg-surface-variant z-50">
+<div class="step-progress-active w-2/3"></div>
+</div>
+<!-- Top Navigation Header -->
+<header class="flex justify-between items-center w-full px-container-margin py-sm bg-surface-container-lowest/80 backdrop-blur-md sticky top-0 z-40">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary">
+            CookScroll
+        </div>
+<div class="w-10"></div> <!-- Spacer for symmetry -->
+</header>
+<main class="flex-grow px-container-margin py-xl flex flex-col items-center">
+<!-- Hero Section -->
+<div class="w-full mb-lg text-center">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-sm">Your Kitchen, Your Way</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Select your dietary preferences and allergens to personalize your recipe feed.</p>
+</div>
+<!-- Illustration Overlay -->
+<div class="w-full max-w-sm aspect-[4/3] rounded-3xl overflow-hidden mb-xl shadow-lg relative">
+<img class="w-full h-full object-cover" data-alt="A vibrant and beautifully arranged bowl of fresh Mediterranean vegetables including cherry tomatoes, sliced cucumbers, chickpeas, and leafy greens. The lighting is bright and airy with high-key soft shadows, creating a fresh and healthy modern aesthetic. The background is a clean white marble countertop that reflects the natural daylight. This high-end culinary photography highlights a commitment to fresh, healthy dietary choices and allergen-friendly ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHywwA7W-_Ae1F1x2PQTTXLlp6QO-ZoLCMT97fUVLVaZ2jv-5nnfWwmo-RVylEpQRBeI4jzp4RTU_EhcNZGbWtcmdmw8bX0TihoGkNLSscXRBVwL-80Odx32VHdeZCkYX5AYb9EL6XwbG3LFulpR-0-udFrGnVBRTtA6sPWS5g-WV75Q8MoBrzFWR2LKePbGd6WDFe299lOAY-ENrZxoN0m0iW3f1_C8lL_gpyE7C61oOkYy2yfQ3TP8Au6Q1mG22gquLWa8UQnBTC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-md">
+<span class="font-label-lg text-label-lg text-white bg-primary-container/90 px-md py-xs rounded-full backdrop-blur-sm">Fresh &amp; Curated</span>
+</div>
+</div>
+<!-- Preference Grid -->
+<div class="w-full max-w-md">
+<h2 class="font-headline-sm-mobile text-headline-sm-mobile text-on-surface mb-md px-base">Dietary Needs</h2>
+<div class="flex flex-wrap gap-sm justify-start" id="preference-chips">
+<!-- Gluten-Free -->
+<button class="group flex items-center gap-xs px-lg py-sm bg-surface-variant/30 text-on-surface-variant rounded-full border-2 border-transparent hover:bg-surface-variant/50 transition-all duration-200 active:scale-95 font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-md" data-icon="eco">eco</span>
+<span>gluten-free</span>
+</button>
+<!-- Lactose-Free -->
+<button class="group flex items-center gap-xs px-lg py-sm bg-surface-variant/30 text-on-surface-variant rounded-full border-2 border-transparent hover:bg-surface-variant/50 transition-all duration-200 active:scale-95 font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-md" data-icon="opacity">opacity</span>
+<span>lactose-free</span>
+</button>
+<!-- Vegan -->
+<button class="group flex items-center gap-xs px-lg py-sm bg-surface-variant/30 text-on-surface-variant rounded-full border-2 border-transparent hover:bg-surface-variant/50 transition-all duration-200 active:scale-95 font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-md" data-icon="potted_plant">potted_plant</span>
+<span>vegan</span>
+</button>
+<!-- Vegetarian -->
+<button class="group flex items-center gap-xs px-lg py-sm bg-surface-variant/30 text-on-surface-variant rounded-full border-2 border-transparent hover:bg-surface-variant/50 transition-all duration-200 active:scale-95 font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-md" data-icon="yard">yard</span>
+<span>vegetarian</span>
+</button>
+<!-- Nut-Free -->
+<button class="group flex items-center gap-xs px-lg py-sm bg-surface-variant/30 text-on-surface-variant rounded-full border-2 border-transparent hover:bg-surface-variant/50 transition-all duration-200 active:scale-95 font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-md" data-icon="nest_eco_leaf">nest_eco_leaf</span>
+<span>nut-free</span>
+</button>
+<!-- Keto (Extra) -->
+<button class="group flex items-center gap-xs px-lg py-sm bg-surface-variant/30 text-on-surface-variant rounded-full border-2 border-transparent hover:bg-surface-variant/50 transition-all duration-200 active:scale-95 font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-md" data-icon="bolt">bolt</span>
+<span>keto</span>
+</button>
+</div>
+<p class="mt-md px-base text-body-sm text-on-surface-variant italic">Select as many as apply to you.</p>
+</div>
+</main>
+<!-- Fixed Bottom Actions -->
+<footer class="w-full bg-surface-container-lowest px-container-margin pt-md pb-xl space-y-md sticky bottom-0 border-t border-transparent shadow-[0px_-8px_24px_rgba(0,0,0,0.06)]">
+<div class="max-w-md mx-auto flex flex-col gap-md">
+<!-- Continue Button -->
+<button class="w-full py-md bg-primary-container text-on-primary-container rounded-full font-headline-sm-mobile text-headline-sm-mobile shadow-lg shadow-primary-container/20 hover:opacity-90 transition-all active:scale-95 flex items-center justify-center gap-sm">
+                Continue
+                <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Skip Button -->
+<button class="w-full py-sm bg-transparent text-on-surface-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant/20 transition-all active:scale-95">
+                Skip for now
+            </button>
+</div>
+</footer>
+<script>
+        function toggleChip(element) {
+            element.classList.toggle('chip-active');
+            
+            // Interaction feedback
+            const icon = element.querySelector('.material-symbols-outlined');
+            if (element.classList.contains('chip-active')) {
+                icon.style.fontVariationSettings = "'FILL' 1";
+            } else {
+                icon.style.fontVariationSettings = "'FILL' 0";
+            }
+        }
+
+        // Lightweight entrance animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const chips = document.querySelectorAll('#preference-chips button');
+            chips.forEach((chip, index) => {
+                chip.style.opacity = '0';
+                chip.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    chip.style.transition = 'all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                    chip.style.opacity = '1';
+                    chip.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body></html>

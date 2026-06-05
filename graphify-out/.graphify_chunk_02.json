@@ -1,0 +1,737 @@
+{
+  "nodes": [
+    {
+      "id": "recipe_feed_screen_ui",
+      "label": "Recipe Feed Screen - Main TikTok-style feed with fullscreen recipe card, nutrition info, like/save actions, bottom nav",
+      "file_type": "image",
+      "source_file": "docs/maquettes/recipe_feed/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "recipe_feed_screen_navbar",
+      "label": "Bottom Navigation Bar - Feed, Recipes, Menu, List, Profile tabs",
+      "file_type": "image",
+      "source_file": "docs/maquettes/recipe_feed/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "recipe_feed_screen_recipe_card",
+      "label": "Recipe Card - Summer Harvest Poke Bowl, 15min, Beginner, Protein/Carbs/Fat macros, like count 2.4k",
+      "file_type": "image",
+      "source_file": "docs/maquettes/recipe_feed/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "search_recipes_screen_ui",
+      "label": "Search Recipes Screen - Search bar, recent searches chips, grid results (124 found)",
+      "file_type": "image",
+      "source_file": "docs/maquettes/search_recipes/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "search_recipes_screen_recent_searches",
+      "label": "Recent Searches - Truffle Pasta, Vegan Ramen, Quick Dinner chips with clear action",
+      "file_type": "image",
+      "source_file": "docs/maquettes/search_recipes/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "search_recipes_screen_results_grid",
+      "label": "Search Results Grid - 2-column grid showing Avocado Tomato, Spicy Vegan Tofu Ramen, Fresh Basil Margherita, Seared Salmon with Quinoa",
+      "file_type": "image",
+      "source_file": "docs/maquettes/search_recipes/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shopping_list_screen_ui",
+      "label": "Shopping List Screen - Categorized checklist (Fruits & Vegetables, Meat & Proteins, Dairy & Eggs), weekly prep summary",
+      "file_type": "image",
+      "source_file": "docs/maquettes/shopping_list/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shopping_list_screen_prep_summary",
+      "label": "Weekly Prep Summary Banner - 7 recipes, 43 items for Next Week's Prep",
+      "file_type": "image",
+      "source_file": "docs/maquettes/shopping_list/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "shopping_list_screen_categories",
+      "label": "Shopping Categories - Fruits & Vegetables, Meat & Proteins, Dairy & Eggs with add item per category",
+      "file_type": "image",
+      "source_file": "docs/maquettes/shopping_list/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sign_up_login_screen_ui",
+      "label": "Sign Up / Login Screen - Welcome Back, email/password form, Sign In CTA, Apple/Google OAuth, Sign Up link",
+      "file_type": "image",
+      "source_file": "docs/maquettes/sign_up_login/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sign_up_login_screen_oauth",
+      "label": "OAuth Providers - Apple Sign In and Google Sign In buttons",
+      "file_type": "image",
+      "source_file": "docs/maquettes/sign_up_login/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "weekly_menu_plan_screen_ui",
+      "label": "Weekly Menu Plan Screen - Calendar week strip, meal slots (Breakfast/Lunch/Dinner/Snacks), Generate List CTA",
+      "file_type": "image",
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "weekly_menu_plan_screen_calendar",
+      "label": "Weekly Calendar Strip - October 21-25 week navigation",
+      "file_type": "image",
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "weekly_menu_plan_screen_generate_list",
+      "label": "Generate List Button - CTA to convert weekly menu to shopping list",
+      "file_type": "image",
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "flutter_lldb_helper_script",
+      "label": "flutter_lldb_helper.py - LLDB debug helper for Flutter iOS RX pages breakpoint interception",
+      "file_type": "code",
+      "source_file": "ios/Flutter/ephemeral/flutter_lldb_helper.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "flutter_export_environment_sh",
+      "label": "flutter_export_environment.sh - Shell script exporting Flutter build environment variables for iOS",
+      "file_type": "code",
+      "source_file": "ios/Flutter/flutter_export_environment.sh",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "flutter_export_env_flutter_root",
+      "label": "FLUTTER_ROOT=/opt/homebrew/share/flutter",
+      "file_type": "code",
+      "source_file": "ios/Flutter/flutter_export_environment.sh",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "flutter_export_env_main_dart",
+      "label": "FLUTTER_TARGET=lib/main.dart - Flutter entry point",
+      "file_type": "code",
+      "source_file": "ios/Flutter/flutter_export_environment.sh",
+      "source_location": "line 6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_appdelegate",
+      "label": "AppDelegate.swift - Flutter iOS app entry point, registers Flutter plugins",
+      "file_type": "code",
+      "source_file": "ios/Runner/AppDelegate.swift",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_appicon_contents",
+      "label": "AppIcon Contents.json - iOS app icon asset catalog for iPhone and iPad sizes",
+      "file_type": "code",
+      "source_file": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_launchimage_contents",
+      "label": "LaunchImage Contents.json - iOS launch screen image asset catalog (1x/2x/3x universal)",
+      "file_type": "code",
+      "source_file": "ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_generated_plugin_registrant_h",
+      "label": "GeneratedPluginRegistrant.h - Objective-C header declaring plugin registration interface",
+      "file_type": "code",
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.h",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_generated_plugin_registrant_m",
+      "label": "GeneratedPluginRegistrant.m - Registers flutter_secure_storage, path_provider_foundation, sqflite, sqlite3_flutter_libs plugins",
+      "file_type": "code",
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_plugin_flutter_secure_storage",
+      "label": "flutter_secure_storage iOS plugin",
+      "file_type": "code",
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": "line 36",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_plugin_path_provider",
+      "label": "path_provider_foundation iOS plugin",
+      "file_type": "code",
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": "line 37",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_plugin_sqflite",
+      "label": "sqflite_darwin iOS plugin - SQLite database support",
+      "file_type": "code",
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": "line 38",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_plugin_sqlite3_flutter_libs",
+      "label": "sqlite3_flutter_libs iOS plugin - SQLite3 native library",
+      "file_type": "code",
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": "line 39",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runner_bridging_header",
+      "label": "Runner-Bridging-Header.h - Swift/ObjC bridging header importing GeneratedPluginRegistrant",
+      "file_type": "code",
+      "source_file": "ios/Runner/Runner-Bridging-Header.h",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ios_runnertests_swift",
+      "label": "RunnerTests.swift - XCTest suite for iOS Runner app (placeholder)",
+      "file_type": "code",
+      "source_file": "ios/RunnerTests/RunnerTests.swift",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_bottom_nav",
+      "label": "Concept: Bottom Navigation - 5-tab navigation pattern (Feed, Recipes, Menu, List, Profile) shared across screens",
+      "file_type": "concept",
+      "source_file": "docs/maquettes/recipe_feed/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_cookscroll_app",
+      "label": "Concept: CookScroll App - Flutter-based mobile cooking app with recipe feed, search, weekly menu planning, shopping list, auth",
+      "file_type": "concept",
+      "source_file": "ios/Runner/AppDelegate.swift",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_weekly_menu_to_shopping",
+      "label": "Concept: Weekly Menu to Shopping List Flow - Generate List action converts meal plan into categorized shopping list",
+      "file_type": "concept",
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "recipe_feed_screen_ui",
+      "target": "recipe_feed_screen_navbar",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/recipe_feed/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "recipe_feed_screen_ui",
+      "target": "recipe_feed_screen_recipe_card",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/recipe_feed/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "recipe_feed_screen_navbar",
+      "target": "concept_bottom_nav",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/recipe_feed/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "search_recipes_screen_ui",
+      "target": "concept_bottom_nav",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/search_recipes/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "search_recipes_screen_ui",
+      "target": "search_recipes_screen_recent_searches",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/search_recipes/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "search_recipes_screen_ui",
+      "target": "search_recipes_screen_results_grid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/search_recipes/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "shopping_list_screen_ui",
+      "target": "concept_bottom_nav",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/shopping_list/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "shopping_list_screen_ui",
+      "target": "shopping_list_screen_prep_summary",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/shopping_list/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "shopping_list_screen_ui",
+      "target": "shopping_list_screen_categories",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/shopping_list/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "weekly_menu_plan_screen_ui",
+      "target": "concept_bottom_nav",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "weekly_menu_plan_screen_ui",
+      "target": "weekly_menu_plan_screen_calendar",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "weekly_menu_plan_screen_ui",
+      "target": "weekly_menu_plan_screen_generate_list",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "weekly_menu_plan_screen_generate_list",
+      "target": "concept_weekly_menu_to_shopping",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "concept_weekly_menu_to_shopping",
+      "target": "shopping_list_screen_ui",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "ios_runner_appdelegate",
+      "target": "ios_runner_generated_plugin_registrant_m",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Runner/AppDelegate.swift",
+      "source_location": "line 10",
+      "weight": 1.0
+    },
+    {
+      "source": "ios_runner_bridging_header",
+      "target": "ios_runner_generated_plugin_registrant_h",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Runner/Runner-Bridging-Header.h",
+      "source_location": "line 1",
+      "weight": 1.0
+    },
+    {
+      "source": "ios_runner_generated_plugin_registrant_m",
+      "target": "ios_runner_generated_plugin_registrant_h",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": "line 7",
+      "weight": 1.0
+    },
+    {
+      "source": "ios_runner_generated_plugin_registrant_m",
+      "target": "ios_runner_plugin_flutter_secure_storage",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": "line 36",
+      "weight": 1.0
+    },
+    {
+      "source": "ios_runner_generated_plugin_registrant_m",
+      "target": "ios_runner_plugin_path_provider",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": "line 37",
+      "weight": 1.0
+    },
+    {
+      "source": "ios_runner_generated_plugin_registrant_m",
+      "target": "ios_runner_plugin_sqflite",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": "line 38",
+      "weight": 1.0
+    },
+    {
+      "source": "ios_runner_generated_plugin_registrant_m",
+      "target": "ios_runner_plugin_sqlite3_flutter_libs",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": "line 39",
+      "weight": 1.0
+    },
+    {
+      "source": "ios_runner_plugin_sqflite",
+      "target": "ios_runner_plugin_sqlite3_flutter_libs",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "flutter_export_environment_sh",
+      "target": "flutter_export_env_main_dart",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Flutter/flutter_export_environment.sh",
+      "source_location": "line 6",
+      "weight": 1.0
+    },
+    {
+      "source": "flutter_export_environment_sh",
+      "target": "concept_cookscroll_app",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Flutter/flutter_export_environment.sh",
+      "source_location": "line 4",
+      "weight": 1.0
+    },
+    {
+      "source": "ios_runner_appdelegate",
+      "target": "concept_cookscroll_app",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "ios/Runner/AppDelegate.swift",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "ios_runnertests_swift",
+      "target": "ios_runner_appdelegate",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "ios/RunnerTests/RunnerTests.swift",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "recipe_feed_screen_ui",
+      "target": "concept_cookscroll_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/maquettes/recipe_feed/screen.png",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "search_recipes_screen_ui",
+      "target": "concept_cookscroll_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/maquettes/search_recipes/screen.png",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "shopping_list_screen_ui",
+      "target": "concept_cookscroll_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/maquettes/shopping_list/screen.png",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "sign_up_login_screen_ui",
+      "target": "concept_cookscroll_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/maquettes/sign_up_login/screen.png",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "weekly_menu_plan_screen_ui",
+      "target": "concept_cookscroll_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/maquettes/weekly_menu_plan/screen.png",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "sign_up_login_screen_ui",
+      "target": "sign_up_login_screen_oauth",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/sign_up_login/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ios_runner_plugin_flutter_secure_storage",
+      "target": "sign_up_login_screen_ui",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m",
+      "source_location": null,
+      "weight": 0.65
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "he_bottom_nav_screens",
+      "label": "All main screens share Bottom Navigation Bar with 5 tabs",
+      "nodes": [
+        "recipe_feed_screen_ui",
+        "search_recipes_screen_ui",
+        "shopping_list_screen_ui",
+        "weekly_menu_plan_screen_ui",
+        "concept_bottom_nav"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/maquettes/recipe_feed/screen.png"
+    },
+    {
+      "id": "he_ios_flutter_plugins",
+      "label": "iOS Flutter plugin set: flutter_secure_storage, path_provider, sqflite, sqlite3_flutter_libs",
+      "nodes": [
+        "ios_runner_generated_plugin_registrant_m",
+        "ios_runner_plugin_flutter_secure_storage",
+        "ios_runner_plugin_path_provider",
+        "ios_runner_plugin_sqflite",
+        "ios_runner_plugin_sqlite3_flutter_libs"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ios/Runner/GeneratedPluginRegistrant.m"
+    },
+    {
+      "id": "he_cookscroll_ui_screens",
+      "label": "CookScroll UI Mockup Screens - all 5 main app screens",
+      "nodes": [
+        "recipe_feed_screen_ui",
+        "search_recipes_screen_ui",
+        "shopping_list_screen_ui",
+        "sign_up_login_screen_ui",
+        "weekly_menu_plan_screen_ui"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/maquettes/recipe_feed/screen.png"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

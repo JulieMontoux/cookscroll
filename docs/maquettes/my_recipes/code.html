@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Recipes - CookScroll</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#00504c",
+                    "on-tertiary-fixed": "#00201e",
+                    "surface-container": "#e8eff1",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#ffb3b0",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "on-background": "#161d1f",
+                    "surface": "#f4fafd",
+                    "secondary": "#8f4e00",
+                    "inverse-on-surface": "#ebf2f4",
+                    "tertiary-container": "#1eada5",
+                    "surface-tint": "#ae2f34",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#dde4e6",
+                    "surface-variant": "#dde4e6",
+                    "on-primary-fixed-variant": "#8c1520",
+                    "on-primary-fixed": "#410006",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e2e9ec",
+                    "outline": "#8c706f",
+                    "primary-container": "#ff6b6b",
+                    "on-secondary-fixed": "#2e1500",
+                    "secondary-fixed-dim": "#ffb77a",
+                    "on-surface-variant": "#584140",
+                    "secondary-fixed": "#ffdcc2",
+                    "on-primary-container": "#6d0010",
+                    "on-secondary-fixed-variant": "#6d3a00",
+                    "on-tertiary-container": "#003a37",
+                    "surface-dim": "#d4dbdd",
+                    "surface-container-low": "#eef5f7",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e0bfbd",
+                    "inverse-surface": "#2b3234",
+                    "on-secondary-container": "#6b3900",
+                    "secondary-container": "#fc9d41",
+                    "tertiary": "#006a65",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdad8",
+                    "on-surface": "#161d1f",
+                    "background": "#f4fafd",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#7cf6ec",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#5dd9d0",
+                    "surface-bright": "#f4fafd",
+                    "primary": "#ae2f34",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "container-margin": "20px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "gutter": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "label-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .recipe-grid-item {
+            aspect-ratio: 4/5;
+        }
+        .scrim-bottom {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
+        }
+        .active-tab-indicator {
+            height: 3px;
+            bottom: -1px;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center w-full px-container-margin py-sm">
+<button class="flex items-center justify-center p-2 hover:bg-surface-variant/20 rounded-full Active: scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-inverse-primary">CookScroll</h1>
+<button class="flex items-center justify-center p-2 hover:bg-surface-variant/20 rounded-full Active: scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="search">search</span>
+</button>
+</header>
+<main class="pt-[72px] pb-32">
+<!-- Sticky Tabs -->
+<nav class="sticky top-[60px] z-40 bg-surface/80 backdrop-blur-md px-container-margin border-b border-outline-variant/30">
+<div class="flex gap-lg overflow-x-auto">
+<button class="relative py-md font-label-lg text-label-lg text-primary whitespace-nowrap active-tab">
+                    Saved
+                    <div class="absolute inset-x-0 bottom-0 h-1 bg-primary rounded-t-full"></div>
+</button>
+<button class="relative py-md font-label-lg text-label-lg text-on-surface-variant whitespace-nowrap transition-colors hover:text-primary">
+                    My creations
+                </button>
+</div>
+</nav>
+<!-- Recipe Grid -->
+<section class="px-container-margin pt-lg">
+<div class="grid grid-cols-2 gap-md">
+<!-- Recipe Card 1 -->
+<article class="group relative recipe-grid-item rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] bg-white">
+<img alt="Fresh Green Salad" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A top-down shot of a vibrant green salad with avocados, tomatoes, and pumpkin seeds, served in a rustic ceramic bowl. The lighting is bright and airy, reflecting a clean, modern kitchen environment. The colors are dominated by fresh greens and warm earthy tones, evoking a healthy and inviting culinary atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqizaBjWmZxLSfbWYAhP-NWOUb4hG1ojxjUMvlSUcTCYAeooYsLWosTJ2m8CaL8vD8GrFNaarKavcQ8zXo5B5EcW7BJ-fdv2QZjvy90rFjRje2nD4izToWnmgfo-5KMyUGwvmzTEejxfmUksnj2mvV0_GgySH0LbGjUGs49iccepgMg6VJU-7pHkg_TS-f0w7rslePu7KAbvgabgIIxtpf5gvG2IqGjx5tB0YtT74ed_BeO25wHbDHQhto485mLml23j-dVBQsTxKp"/>
+<div class="absolute inset-0 scrim-bottom flex flex-col justify-end p-md">
+<span class="inline-flex bg-secondary-container text-on-secondary-container font-label-md text-label-md px-sm py-xs rounded-full w-fit mb-xs">Healthy</span>
+<h3 class="text-white font-headline-sm-mobile text-headline-sm-mobile line-clamp-2">Green Detox Bowl</h3>
+</div>
+<button class="absolute top-sm right-sm w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/40 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</article>
+<!-- Recipe Card 2 -->
+<article class="group relative recipe-grid-item rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] bg-white">
+<img alt="Mediterranean Pasta" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A close-up of a steaming bowl of Mediterranean pasta with olives, feta cheese, and cherry tomatoes. The scene is shot with a shallow depth of field against a soft, light wood surface. The lighting is warm and golden, highlighting the textures of the ingredients and creating a cozy, homemade food vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOkW5ozGn3J0C6-QTMjzFVD9XDAhRCesXC_KBzUaikW4OPezF7Hv8DGXqYFyXchST4WyhXKfHI32ajWlQQaViSkk_PE7U6x0yn7MfFZWm5LmjYFsnC5gWJlrffdOH69zkX0iXA-6LHRMKiyqCgVCX8mREdDUkkPFytWrnteVsTx6T8tykS1O47tBboPqjM59iJiVlhdAxdzyBlh5lsppDkIySriijUISsZL9LoJw8wKvAAUqpzESg_2oXKuiIkciUcv6b6ckj8GNAT"/>
+<div class="absolute inset-0 scrim-bottom flex flex-col justify-end p-md">
+<span class="inline-flex bg-secondary-container text-on-secondary-container font-label-md text-label-md px-sm py-xs rounded-full w-fit mb-xs">Fast</span>
+<h3 class="text-white font-headline-sm-mobile text-headline-sm-mobile line-clamp-2">Sun-Dried Tomato Penne</h3>
+</div>
+<button class="absolute top-sm right-sm w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/40 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</article>
+<!-- Recipe Card 3 -->
+<article class="group relative recipe-grid-item rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] bg-white">
+<img alt="Gourmet Burger" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A juicy gourmet burger with melting cheese, crispy onions, and fresh lettuce, captured in a high-contrast style. The background is a clean, minimalist kitchen set with soft daylight. The colors emphasize the vibrant orange of the cheese and the deep browns of the grilled meat, presenting an energetic and appetizing aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyCk49tktcT3ljczcY_W4D4_jvBDF6fP2j1kht-0zFhkCRFMQ5ZvAsiMANVjdA3KQue0xTln1yeoLZ3cn3YsVYOUxuwWtGqTnUhHT3J97v9jndIUGByLpqk316uvUJZ4uRD3DJ9vcvZRVE4cc0TYpGaw2S1n-_bc4T3fm-nrnop6DZbAmKekMU-MJVyJAaiYfNhoANHGtNVWkrayv9F3SD78Yi8n4Wz2LPdJvOxn1qDXIP0Tgdf0LDL42xFb19ImGvCwarS2sdanvg"/>
+<div class="absolute inset-0 scrim-bottom flex flex-col justify-end p-md">
+<span class="inline-flex bg-secondary-container text-on-secondary-container font-label-md text-label-md px-sm py-xs rounded-full w-fit mb-xs">Bistro</span>
+<h3 class="text-white font-headline-sm-mobile text-headline-sm-mobile line-clamp-2">The Ultimate Wagyu Burger</h3>
+</div>
+<button class="absolute top-sm right-sm w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/40 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</article>
+<!-- Recipe Card 4 -->
+<article class="group relative recipe-grid-item rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] bg-white">
+<img alt="Roasted Vegetables" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A colorful tray of roasted seasonal vegetables including carrots, bell peppers, and zucchini, glistening with olive oil and herbs. The scene is bright and airy with a modern, tactile feel. The lighting is diffused, casting soft shadows that highlight the textures of the charred vegetable edges and fresh rosemary sprigs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtfVtgp4Osz9Orm4FV91IpwyDYpDreqx9g9fiXKYdeWrzlaUuFmSHPG02naUhcQZWfQEykes-C1qywi2s7vfOEdPwWbZsE1m4j7i6KzaieQjdShU0on6RioiG5ucmyZzf8tvHZ1HGnqcSU1DX7Z1XmGccGK0fakGypu5cC6Ga2nkhSwszqtQCKbfQ3Ez5kDDLzzAjM_9OpLs5ghENBkD3ghPnjZurX6J50SDs89NOjD_mDCp2muPHCXQpqaj3G287UpsycMO3JTONh"/>
+<div class="absolute inset-0 scrim-bottom flex flex-col justify-end p-md">
+<span class="inline-flex bg-secondary-container text-on-secondary-container font-label-md text-label-md px-sm py-xs rounded-full w-fit mb-xs">Vegan</span>
+<h3 class="text-white font-headline-sm-mobile text-headline-sm-mobile line-clamp-2">Herb Roasted Harvest</h3>
+</div>
+<button class="absolute top-sm right-sm w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/40 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</article>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed right-container-margin bottom-28 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-lg flex items-center justify-center hover:opacity-90 active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface dark:bg-inverse-surface rounded-t-xl shadow-[0px_-8px_24px_rgba(0,0,0,0.06)]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 Active: scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md">Feed</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full px-4 py-1 hover:opacity-80 Active: scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="book" style="font-variation-settings: 'FILL' 1;">book</span>
+<span class="font-label-md text-label-md">Recipes</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 Active: scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-label-md text-label-md">Menu</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 Active: scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">List</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 Active: scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions for tab switching
+        const tabs = document.querySelectorAll('nav div button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('text-primary');
+                    t.classList.add('text-on-surface-variant');
+                    const indicator = t.querySelector('div');
+                    if(indicator) indicator.remove();
+                });
+                tab.classList.remove('text-on-surface-variant');
+                tab.classList.add('text-primary');
+                const newIndicator = document.createElement('div');
+                newIndicator.className = 'absolute inset-x-0 bottom-0 h-1 bg-primary rounded-t-full';
+                tab.appendChild(newIndicator);
+            });
+        });
+
+        // Simple toggle for favorite buttons
+        document.querySelectorAll('article button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const icon = btn.querySelector('span');
+                const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+                icon.style.fontVariationSettings = isFilled ? "'FILL' 0" : "'FILL' 1";
+                btn.classList.add('scale-125');
+                setTimeout(() => btn.classList.remove('scale-125'), 150);
+            });
+        });
+    </script>
+</body></html>

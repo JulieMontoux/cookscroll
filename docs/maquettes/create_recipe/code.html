@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#00504c",
+                    "on-tertiary-fixed": "#00201e",
+                    "surface-container": "#e8eff1",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#ffb3b0",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "on-background": "#161d1f",
+                    "surface": "#f4fafd",
+                    "secondary": "#8f4e00",
+                    "inverse-on-surface": "#ebf2f4",
+                    "tertiary-container": "#1eada5",
+                    "surface-tint": "#ae2f34",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#dde4e6",
+                    "surface-variant": "#dde4e6",
+                    "on-primary-fixed-variant": "#8c1520",
+                    "on-primary-fixed": "#410006",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e2e9ec",
+                    "outline": "#8c706f",
+                    "primary-container": "#ff6b6b",
+                    "on-secondary-fixed": "#2e1500",
+                    "secondary-fixed-dim": "#ffb77a",
+                    "on-surface-variant": "#584140",
+                    "secondary-fixed": "#ffdcc2",
+                    "on-primary-container": "#6d0010",
+                    "on-secondary-fixed-variant": "#6d3a00",
+                    "on-tertiary-container": "#003a37",
+                    "surface-dim": "#d4dbdd",
+                    "surface-container-low": "#eef5f7",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e0bfbd",
+                    "inverse-surface": "#2b3234",
+                    "on-secondary-container": "#6b3900",
+                    "secondary-container": "#fc9d41",
+                    "tertiary": "#006a65",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdad8",
+                    "on-surface": "#161d1f",
+                    "background": "#f4fafd",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#7cf6ec",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#5dd9d0",
+                    "surface-bright": "#f4fafd",
+                    "primary": "#ae2f34",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "container-margin": "20px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "gutter": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "label-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .glass-scrim {
+            background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+        }
+        
+        .input-focus-ring:focus-within {
+            box-shadow: 0 0 0 2px theme('colors.primary-container');
+        }
+
+        .step-number::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+        }
+        .steps-container {
+            counter-reset: step-counter;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-32">
+<!-- Top App Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center px-container-margin py-sm">
+<div class="flex items-center gap-md">
+<button class="flex items-center justify-center p-2 text-primary Active: scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary">CookScroll</h1>
+</div>
+<div class="flex items-center">
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant/20 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</nav>
+<main class="pt-20 px-container-margin max-w-2xl mx-auto">
+<header class="mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface">Share Your Recipe</h2>
+<p class="font-body-sm text-on-surface-variant">Inspire the community with your culinary creations.</p>
+</header>
+<form class="space-y-xl" id="recipeForm">
+<!-- Photo Upload -->
+<section>
+<div class="relative w-full aspect-[4/3] rounded-xl bg-surface-container-high overflow-hidden border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-on-surface-variant group cursor-pointer hover:bg-surface-container-highest transition-colors">
+<img class="hidden absolute inset-0 w-full h-full object-cover" data-alt="A professional food photography studio setup with warm, natural sunlight streaming through a window. A rustic wooden table is prepared for a meal, featuring fresh herbs, artisanal ingredients, and a clean workspace. The aesthetic is bright, high-key, and inviting, with soft shadows and a modern minimalist feel." id="previewImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTc6dMEitCZq_sG1nZ2h37DYedg_OkHZvFP8t1ZmGTKoCWb6J3R__OjtpkDWtJ0BZWN42xv1TscUPLi0iOEaYWEELchnlrV6lT5fNuk_21D0oGIMaXDW8GjimyAXNVROA--4Cg7p0Wr1YkFXLqULas4n5i2um532vCjMC9T-UtkcF41b2O3L95JhqekA6FvNDWAkPwRoi42eOoLeEY4ZEynXOmrA2CIljFJF3DcH0YCE7po6za797va21wQN6UEavqRmcnYti9VJ93"/>
+<div class="z-10 flex flex-col items-center text-center px-lg">
+<span class="material-symbols-outlined text-[48px] mb-md" data-icon="add_a_photo">add_a_photo</span>
+<p class="font-label-lg text-label-lg">Tap to upload cover photo</p>
+<p class="font-body-sm text-body-sm mt-xs opacity-70">Landscape or portrait works best</p>
+</div>
+</div>
+</section>
+<!-- Basic Info -->
+<section class="space-y-md">
+<div class="space-y-xs">
+<label class="font-label-lg text-label-lg text-on-surface-variant ml-xs">Recipe Title</label>
+<input class="w-full h-14 px-md bg-surface-container-low border-none rounded-xl font-body-lg text-body-lg focus:ring-2 focus:ring-primary-container text-on-surface" placeholder="e.g. Grandma's Secret Basil Pasta" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-lg text-label-lg text-on-surface-variant ml-xs">Short Description</label>
+<textarea class="w-full p-md bg-surface-container-low border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container text-on-surface resize-none" placeholder="Tell us the story behind this dish..." rows="3"></textarea>
+</div>
+</section>
+<!-- Metrics & Difficulty -->
+<section class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-lg text-label-lg text-on-surface-variant ml-xs">Prep Time</label>
+<div class="relative">
+<input class="w-full h-12 pl-md pr-xl bg-surface-container-low border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container" placeholder="30 mins" type="text"/>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="schedule">schedule</span>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-lg text-label-lg text-on-surface-variant ml-xs">Servings</label>
+<div class="relative">
+<input class="w-full h-12 pl-md pr-xl bg-surface-container-low border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container" placeholder="4" type="number"/>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="group">group</span>
+</div>
+</div>
+<div class="col-span-2 space-y-sm">
+<label class="font-label-lg text-label-lg text-on-surface-variant ml-xs">Difficulty</label>
+<div class="flex gap-sm">
+<label class="flex-1">
+<input class="hidden peer" name="difficulty" type="radio" value="easy"/>
+<div class="text-center py-2 rounded-full border border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary-container transition-all cursor-pointer font-label-md text-label-md">Easy</div>
+</label>
+<label class="flex-1">
+<input checked="" class="hidden peer" name="difficulty" type="radio" value="medium"/>
+<div class="text-center py-2 rounded-full border border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary-container transition-all cursor-pointer font-label-md text-label-md">Medium</div>
+</label>
+<label class="flex-1">
+<input class="hidden peer" name="difficulty" type="radio" value="hard"/>
+<div class="text-center py-2 rounded-full border border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary-container transition-all cursor-pointer font-label-md text-label-md">Chef Level</div>
+</label>
+</div>
+</div>
+</section>
+<!-- Allergens -->
+<section class="space-y-sm">
+<label class="font-label-lg text-label-lg text-on-surface-variant ml-xs">Allergens &amp; Dietary</label>
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button">Gluten-Free</button>
+<button class="px-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button">Dairy-Free</button>
+<button class="px-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button">Vegan</button>
+<button class="px-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button">Nut-Free</button>
+<button class="px-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button">Sugar-Free</button>
+<button class="px-md py-1.5 rounded-full bg-surface-container-low border border-outline-variant text-on-surface-variant font-label-md text-label-md flex items-center gap-xs" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span> Add
+                    </button>
+</div>
+</section>
+<!-- Ingredients -->
+<section class="space-y-md">
+<div class="flex justify-between items-center px-xs">
+<label class="font-headline-sm text-headline-sm text-on-surface">Ingredients</label>
+<span class="text-on-surface-variant font-label-md text-label-md">3 Items</span>
+</div>
+<div class="space-y-sm" id="ingredientsList">
+<!-- Dynamic Ingredient Item -->
+<div class="flex gap-sm items-center animate-in slide-in-from-left duration-200">
+<div class="flex-[3] relative">
+<input class="w-full h-12 px-md bg-surface-container-low border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container" placeholder="Ingredient name" type="text"/>
+</div>
+<div class="flex-1">
+<input class="w-full h-12 px-sm text-center bg-surface-container-low border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container" placeholder="Qty" type="text"/>
+</div>
+<div class="flex-1">
+<select class="w-full h-12 px-sm bg-surface-container-low border-none rounded-xl font-label-md text-label-md focus:ring-2 focus:ring-primary-container appearance-none">
+<option>Unit</option>
+<option>g</option>
+<option>ml</option>
+<option>tsp</option>
+<option>tbsp</option>
+<option>cups</option>
+</select>
+</div>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-full transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+<!-- Mock Item 2 -->
+<div class="flex gap-sm items-center">
+<div class="flex-[3] relative">
+<input class="w-full h-12 px-md bg-surface-container-low border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container" type="text" value="San Marzano Tomatoes"/>
+</div>
+<div class="flex-1">
+<input class="w-full h-12 px-sm text-center bg-surface-container-low border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container" type="text" value="400"/>
+</div>
+<div class="flex-1">
+<select class="w-full h-12 px-sm bg-surface-container-low border-none rounded-xl font-label-md text-label-md focus:ring-2 focus:ring-primary-container appearance-none">
+<option selected="">g</option>
+</select>
+</div>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-full transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+<button class="w-full h-12 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center gap-sm text-on-surface-variant hover:bg-surface-variant/10 transition-colors font-label-lg text-label-lg" onclick="addIngredient()" type="button">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    Add Ingredient
+                </button>
+</section>
+<!-- Cooking Steps -->
+<section class="space-y-md">
+<div class="flex justify-between items-center px-xs">
+<label class="font-headline-sm text-headline-sm text-on-surface">Steps</label>
+</div>
+<div class="steps-container space-y-lg" id="stepsList">
+<!-- Dynamic Step -->
+<div class="relative pl-12 group">
+<div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-lg step-number"></div>
+<div class="bg-surface-container-low p-md rounded-xl space-y-sm">
+<textarea class="w-full p-0 bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface resize-none" placeholder="Describe this step..." rows="2"></textarea>
+<div class="flex justify-between items-center">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_photo_alternate">add_photo_alternate</span>
+<span class="font-label-md">Add step photo</span>
+</button>
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="drag_indicator">drag_indicator</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mock Step 2 -->
+<div class="relative pl-12 group">
+<div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-lg step-number"></div>
+<div class="bg-surface-container-low p-md rounded-xl space-y-sm">
+<textarea class="w-full p-0 bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface resize-none" rows="2">Finely mince the garlic and sauté in extra virgin olive oil until fragrant, about 2 minutes.</textarea>
+<div class="flex justify-between items-center">
+<button class="flex items-center gap-xs text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+<span class="font-label-md">Photo added</span>
+</button>
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="drag_indicator">drag_indicator</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-md flex items-center justify-center gap-sm text-primary font-label-lg text-label-lg hover:bg-primary/5 rounded-xl transition-colors" onclick="addStep()" type="button">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                    Add next step
+                </button>
+</section>
+</form>
+</main>
+<!-- Bottom Navigation Shell (Suppressed for transactional flow, but used as "Save" anchor as per request) -->
+<div class="fixed bottom-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-[0px_-8px_24px_rgba(0,0,0,0.06)] px-container-margin pb-8 pt-4">
+<button class="w-full h-14 bg-primary text-on-primary rounded-full font-headline-sm text-headline-sm shadow-lg active:scale-95 transition-all duration-150 flex items-center justify-center gap-md">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+            Save Recipe
+        </button>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+        function addIngredient() {
+            const list = document.getElementById('ingredientsList');
+            const div = document.createElement('div');
+            div.className = 'flex gap-sm items-center animate-in slide-in-from-left duration-300';
+            div.innerHTML = `
+                <div class="flex-[3] relative">
+                    <input type="text" placeholder="Ingredient name" class="w-full h-12 px-md bg-surface-container-low border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container">
+                </div>
+                <div class="flex-1">
+                    <input type="text" placeholder="Qty" class="w-full h-12 px-sm text-center bg-surface-container-low border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container">
+                </div>
+                <div class="flex-1">
+                    <select class="w-full h-12 px-sm bg-surface-container-low border-none rounded-xl font-label-md text-label-md focus:ring-2 focus:ring-primary-container appearance-none">
+                        <option>Unit</option>
+                        <option>g</option>
+                        <option>ml</option>
+                        <option>tsp</option>
+                        <option>tbsp</option>
+                        <option>cups</option>
+                    </select>
+                </div>
+                <button type="button" onclick="this.parentElement.remove()" class="p-2 text-error hover:bg-error-container/20 rounded-full transition-colors">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">delete_outline</span>
+                </button>
+            `;
+            list.appendChild(div);
+        }
+
+        function addStep() {
+            const list = document.getElementById('stepsList');
+            const div = document.createElement('div');
+            div.className = 'relative pl-12 group animate-in slide-in-from-bottom duration-300';
+            div.innerHTML = `
+                <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-lg step-number"></div>
+                <div class="bg-surface-container-low p-md rounded-xl space-y-sm">
+                    <textarea rows="2" placeholder="Describe this step..." class="w-full p-0 bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface resize-none"></textarea>
+                    <div class="flex justify-between items-center">
+                        <button type="button" class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">add_photo_alternate</span>
+                            <span class="font-label-md">Add step photo</span>
+                        </button>
+                        <button type="button" onclick="this.closest('.relative').remove()" class="text-error opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">delete</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+            list.appendChild(div);
+        }
+
+        // Toggle allergen chips
+        document.querySelectorAll('section button[type="button"]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.innerText.includes('Add')) return;
+                this.classList.toggle('bg-surface-container-highest');
+                this.classList.toggle('bg-primary-container');
+                this.classList.toggle('text-on-primary-container');
+            });
+        });
+    </script>
+</body></html>

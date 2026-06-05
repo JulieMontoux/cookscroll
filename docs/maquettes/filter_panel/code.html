@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CookScroll - Filter Recipes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-scrim {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #ae2f34;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 4px solid #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .custom-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: #ae2f34;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 4px solid #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#00504c",
+                        "on-tertiary-fixed": "#00201e",
+                        "surface-container": "#e8eff1",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb3b0",
+                        "primary-fixed-dim": "#ffb3b0",
+                        "on-background": "#161d1f",
+                        "surface": "#f4fafd",
+                        "secondary": "#8f4e00",
+                        "inverse-on-surface": "#ebf2f4",
+                        "tertiary-container": "#1eada5",
+                        "surface-tint": "#ae2f34",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dde4e6",
+                        "surface-variant": "#dde4e6",
+                        "on-primary-fixed-variant": "#8c1520",
+                        "on-primary-fixed": "#410006",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e2e9ec",
+                        "outline": "#8c706f",
+                        "primary-container": "#ff6b6b",
+                        "on-secondary-fixed": "#2e1500",
+                        "secondary-fixed-dim": "#ffb77a",
+                        "on-surface-variant": "#584140",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-primary-container": "#6d0010",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "on-tertiary-container": "#003a37",
+                        "surface-dim": "#d4dbdd",
+                        "surface-container-low": "#eef5f7",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e0bfbd",
+                        "inverse-surface": "#2b3234",
+                        "on-secondary-container": "#6b3900",
+                        "secondary-container": "#fc9d41",
+                        "tertiary": "#006a65",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdad8",
+                        "on-surface": "#161d1f",
+                        "background": "#f4fafd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#7cf6ec",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#5dd9d0",
+                        "surface-bright": "#f4fafd",
+                        "primary": "#ae2f34",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "container-margin": "20px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "gutter": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-40 flex justify-between items-center w-full px-container-margin py-sm">
+<div class="flex items-center gap-md">
+<button class="text-primary hover:bg-surface-variant/20 p-2 rounded-full transition-transform active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary">CookScroll</h1>
+</div>
+<button class="text-primary hover:bg-surface-variant/20 p-2 rounded-full transition-transform active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas (Background recipes) -->
+<main class="p-container-margin space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Mock Card 1 -->
+<div class="relative rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] h-64">
+<img class="w-full h-full object-cover" data-alt="A vibrant and fresh Mediterranean salad bowl with grilled salmon, ripe cherry tomatoes, crunchy cucumber slices, and dark leafy greens. The lighting is bright and airy, reflecting a healthy and energetic lifestyle. The composition is clean and modern, highlighting the textures of the ingredients in a high-end food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjdfm64DL2Hid_aow-dqfVA_L9YOCbG6fk4tMYnfXpDER4SyIKJR6w4AK8x6mD0AcdmX7OXgPV2G0RZzOGmgr217dyEV13jMbR3sdIQoJ-HtiRz4EOB8NdqovFf_aZ4GKZ6WDdqV1kevGQvE1LgB7HPo3OivjY9akS7Tx1uFJN5uM22_DfGNI1IGWbT2sMdCtIzdPXY422-YvdDKnkWwHK8Bw-1AlvRKOWMBvaaYFoiOnLmdJBH_vJQJp8lGbq81E-Z2w7nAMe283m"/>
+<div class="absolute inset-0 glass-scrim flex flex-col justify-end p-md">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md w-fit mb-sm">Healthy</span>
+<h3 class="font-headline-sm text-headline-sm text-white">Citrus Salmon Bowl</h3>
+</div>
+</div>
+<!-- Mock Card 2 -->
+<div class="relative rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] h-64">
+<img class="w-full h-full object-cover" data-alt="Fluffy stack of golden pancakes topped with a melting knob of butter and drizzled with amber maple syrup. Fresh blueberries are scattered across the top. The image has a warm, inviting morning glow with soft side lighting that emphasizes the steam and texture. Professional culinary presentation on a minimalist white ceramic plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCButqPiV9FzYOUj8pvH0IekvK9NYAZRH3mQmD6pLPVB9zhXlKwtfLhLBAuXT2_E6BVMEyF7IqBt1Tie2JK7ZM_DvzURJYHx8rNjmLSeSI7N03HgbS9A3IHWmwXlLDZ6iudIHgtrn2-1KRXDgSh_OEvNt64guOgwc7S5zqYcM9btsRvZVsBz9xYajlLmwODsg9KpdmzTj0fi5TO_QbqR6eHmmEBde8u31epQhEp0tDkSTs5p4ns-qkQIdAKxUthyBxhMNlDE7nM7se9"/>
+<div class="absolute inset-0 glass-scrim flex flex-col justify-end p-md">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md w-fit mb-sm">Breakfast</span>
+<h3 class="font-headline-sm text-headline-sm text-white">Classic Fluffy Pancakes</h3>
+</div>
+</div>
+</div>
+</main>
+<!-- Filter Bottom Sheet Overlay -->
+<div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 transition-opacity duration-300" id="filter-backdrop">
+<div class="fixed bottom-0 left-0 right-0 bg-surface rounded-t-[32px] max-h-[813px] overflow-y-auto shadow-2xl transition-transform duration-500 transform translate-y-0" id="bottom-sheet">
+<!-- Handle -->
+<div class="w-full flex justify-center py-4">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="px-container-margin pb-md flex justify-between items-center border-b border-surface-variant/30">
+<h2 class="font-headline-md text-headline-md text-on-surface">Refine Feed</h2>
+<button class="text-primary font-label-lg text-label-lg hover:bg-primary/5 px-3 py-1.5 rounded-full transition-colors" id="reset-filters">Reset all</button>
+</div>
+<!-- Scrollable Content -->
+<div class="px-container-margin py-lg space-y-xl">
+<!-- Macros Section -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Nutritional Macros</h3>
+<span class="text-on-surface-variant font-label-md text-label-md">Daily Target</span>
+</div>
+<div class="space-y-lg bg-surface-container-low p-md rounded-xl">
+<!-- Protein Slider -->
+<div class="space-y-2">
+<div class="flex justify-between font-label-lg text-label-lg text-on-surface-variant">
+<span>Protein</span>
+<span class="font-bold text-primary"><span id="protein-val">45</span>g+</span>
+</div>
+<input class="w-full h-1.5 bg-outline-variant rounded-lg appearance-none cursor-pointer custom-slider" max="150" min="0" oninput="document.getElementById('protein-val').innerText = this.value" type="range" value="45"/>
+</div>
+<!-- Carbs Slider -->
+<div class="space-y-2">
+<div class="flex justify-between font-label-lg text-label-lg text-on-surface-variant">
+<span>Carbohydrates</span>
+<span class="font-bold text-secondary"><span id="carbs-val">60</span>g+</span>
+</div>
+<input class="w-full h-1.5 bg-outline-variant rounded-lg appearance-none cursor-pointer custom-slider" max="300" min="0" oninput="document.getElementById('carbs-val').innerText = this.value" type="range" value="60"/>
+</div>
+</div>
+</section>
+<!-- Allergens Section (Toggle Chips) -->
+<section>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Dietary &amp; Allergens</h3>
+<div class="flex flex-wrap gap-sm">
+<button class="filter-chip flex items-center gap-xs px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 transition-all font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-[18px]">eco</span> Vegan
+                        </button>
+<button class="filter-chip flex items-center gap-xs px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 transition-all font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-[18px]">bakery_dining</span> Gluten-Free
+                        </button>
+<button class="filter-chip flex items-center gap-xs px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 transition-all font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-[18px]">egg</span> Dairy-Free
+                        </button>
+<button class="filter-chip flex items-center gap-xs px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 transition-all font-label-lg text-label-lg" onclick="toggleChip(this)">
+<span class="material-symbols-outlined text-[18px]">set_meal</span> Nut-Free
+                        </button>
+</div>
+</section>
+<!-- Difficulty (Pill Selector) -->
+<section>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Difficulty Level</h3>
+<div class="grid grid-cols-3 gap-sm bg-surface-container-high p-1 rounded-full">
+<button class="difficulty-btn py-2.5 rounded-full font-label-lg text-label-lg transition-all bg-primary-container text-on-primary-container" onclick="selectDifficulty(this)">Easy</button>
+<button class="difficulty-btn py-2.5 rounded-full font-label-lg text-label-lg transition-all text-on-surface-variant" onclick="selectDifficulty(this)">Medium</button>
+<button class="difficulty-btn py-2.5 rounded-full font-label-lg text-label-lg transition-all text-on-surface-variant" onclick="selectDifficulty(this)">Hard</button>
+</div>
+</section>
+<!-- Max Prep Time Section (Slider) -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Max Prep Time</h3>
+<span class="font-bold text-primary font-headline-sm text-headline-sm"><span id="time-val">45</span> min</span>
+</div>
+<div class="relative pt-2 pb-6 px-1">
+<input class="w-full h-2 bg-outline-variant rounded-lg appearance-none cursor-pointer custom-slider" max="120" min="5" oninput="document.getElementById('time-val').innerText = this.value" step="5" type="range" value="45"/>
+<div class="flex justify-between mt-3 text-on-surface-variant font-label-md text-label-md">
+<span>5m</span>
+<span>30m</span>
+<span>60m</span>
+<span>90m</span>
+<span>2h</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky CTA Button -->
+<div class="sticky bottom-0 bg-surface px-container-margin pb-8 pt-4 shadow-[0px_-12px_24px_rgba(0,0,0,0.04)] border-t border-surface-variant/30">
+<button class="w-full bg-primary hover:bg-primary-container text-white py-4 rounded-full font-headline-sm text-headline-sm flex items-center justify-center gap-sm transition-all transform active:scale-[0.98] shadow-lg">
+                    Apply Filters
+                    <span class="bg-white/20 text-white text-[12px] w-6 h-6 flex items-center justify-center rounded-full font-bold">3</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation (Shared Component) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface shadow-[0px_-8px_24px_rgba(0,0,0,0.06)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:opacity-80 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 hover:opacity-80 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="book" style="font-variation-settings: 'FILL' 1;">book</span>
+<span class="font-label-md text-label-md">Recipes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:opacity-80 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-label-md text-label-md">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:opacity-80 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">List</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:opacity-80 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+        function toggleChip(el) {
+            el.classList.toggle('bg-primary-container');
+            el.classList.toggle('text-on-primary-container');
+            el.classList.toggle('border-transparent');
+            el.classList.toggle('border-outline-variant');
+            
+            const icon = el.querySelector('.material-symbols-outlined');
+            if (el.classList.contains('bg-primary-container')) {
+                icon.style.fontVariationSettings = "'FILL' 1";
+            } else {
+                icon.style.fontVariationSettings = "'FILL' 0";
+            }
+        }
+
+        function selectDifficulty(el) {
+            document.querySelectorAll('.difficulty-btn').forEach(btn => {
+                btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+                btn.classList.add('text-on-surface-variant');
+            });
+            el.classList.add('bg-primary-container', 'text-on-primary-container');
+            el.classList.remove('text-on-surface-variant');
+        }
+
+        // Closing interaction for the demo
+        document.getElementById('filter-backdrop').addEventListener('click', (e) => {
+            if (e.target.id === 'filter-backdrop') {
+                const sheet = document.getElementById('bottom-sheet');
+                sheet.style.transform = 'translateY(100%)';
+                setTimeout(() => {
+                    document.getElementById('filter-backdrop').style.opacity = '0';
+                    setTimeout(() => {
+                         document.getElementById('filter-backdrop').style.display = 'none';
+                    }, 300);
+                }, 100);
+            }
+        });
+
+        // Reset functionality
+        document.getElementById('reset-filters').addEventListener('click', () => {
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.classList.remove('bg-primary-container', 'text-on-primary-container', 'border-transparent');
+                chip.classList.add('border-outline-variant');
+                chip.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+            });
+            // Reset sliders
+            document.querySelectorAll('input[type="range"]').forEach(range => {
+                range.value = range.defaultValue;
+                const event = new Event('input');
+                range.dispatchEvent(event);
+            });
+            // Reset difficulty
+            selectDifficulty(document.querySelectorAll('.difficulty-btn')[0]);
+        });
+    </script>
+</body></html>

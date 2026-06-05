@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#00504c",
+                    "on-tertiary-fixed": "#00201e",
+                    "surface-container": "#e8eff1",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#ffb3b0",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "on-background": "#161d1f",
+                    "surface": "#f4fafd",
+                    "secondary": "#8f4e00",
+                    "inverse-on-surface": "#ebf2f4",
+                    "tertiary-container": "#1eada5",
+                    "surface-tint": "#ae2f34",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#dde4e6",
+                    "surface-variant": "#dde4e6",
+                    "on-primary-fixed-variant": "#8c1520",
+                    "on-primary-fixed": "#410006",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e2e9ec",
+                    "outline": "#8c706f",
+                    "primary-container": "#ff6b6b",
+                    "on-secondary-fixed": "#2e1500",
+                    "secondary-fixed-dim": "#ffb77a",
+                    "on-surface-variant": "#584140",
+                    "secondary-fixed": "#ffdcc2",
+                    "on-primary-container": "#6d0010",
+                    "on-secondary-fixed-variant": "#6d3a00",
+                    "on-tertiary-container": "#003a37",
+                    "surface-dim": "#d4dbdd",
+                    "surface-container-low": "#eef5f7",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e0bfbd",
+                    "inverse-surface": "#2b3234",
+                    "on-secondary-container": "#6b3900",
+                    "secondary-container": "#fc9d41",
+                    "tertiary": "#006a65",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdad8",
+                    "on-surface": "#161d1f",
+                    "background": "#f4fafd",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#7cf6ec",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#5dd9d0",
+                    "surface-bright": "#f4fafd",
+                    "primary": "#ae2f34",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "container-margin": "20px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "gutter": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "label-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .recipe-snap-container {
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+        .recipe-section {
+            scroll-snap-align: start;
+            height: 100vh;
+            position: relative;
+        }
+        .glass-overlay {
+            background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+        }
+        .action-button-glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center w-full px-container-margin py-sm">
+<div class="flex items-center gap-md">
+<button class="p-2 hover:bg-surface-variant/20 rounded-full transition-transform active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-inverse-primary">CookScroll</h1>
+<div class="flex items-center gap-md">
+<button class="p-2 hover:bg-surface-variant/20 rounded-full transition-transform active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content: Vertical Scroll Feed -->
+<main class="recipe-snap-container no-scrollbar">
+<!-- Recipe 1 -->
+<section class="recipe-section w-full">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A high-angle, close-up shot of a vibrant poke bowl with fresh salmon, edamame, and mango. The lighting is bright and natural, enhancing the vivid oranges and greens of the ingredients. The background is a clean, minimalist wooden table, creating a modern and healthy aesthetic. The overall mood is energetic and appetizing, perfectly suited for a premium social cooking app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJPtR17um_KmhOrHq9i-1HEpQ9FQlfsjQsi0RJFdvPu14zGGqNW2OSH2Raw3urpOLXcYPMTQvUN5rCaLnodXc_mHfMTgPEys4wJ82ukfHuuxXTMy7VM6qVHQRSnpO3A4uh8omSYllB37UoT3_ZQMP8790bo_HzovXXglr4uTtwWgbw4Ums1Cv7sDN7D1w5OmYn6UMETNcLfDlKVunE1pgWE6-ANMn2zav5rnLFV9AVWfqXvVYeIVsvr94BSq66tKx8boTy-Tk_fC2l"/>
+</div>
+<!-- Glass Scrim -->
+<div class="absolute inset-0 z-10 glass-overlay"></div>
+<!-- Right Action Bar -->
+<div class="absolute right-container-margin bottom-32 z-30 flex flex-col gap-lg items-center">
+<div class="flex flex-col items-center gap-xs">
+<button class="action-button-glass p-3 rounded-full text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<span class="font-label-md text-label-md text-white">2.4k</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<button class="action-button-glass p-3 rounded-full text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</button>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<button class="action-button-glass p-3 rounded-full text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+<!-- Bottom Info Overlay -->
+<div class="absolute bottom-28 left-container-margin right-container-margin z-30 mb-8">
+<div class="flex flex-wrap gap-sm mb-md">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">15 mins</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-md text-label-md">Beginner</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-white mb-md">Summer Harvest Poke Bowl</h2>
+<div class="flex gap-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white/70">Protein</span>
+<span class="font-label-lg text-label-lg text-white">24g</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white/70">Carbs</span>
+<span class="font-label-lg text-label-lg text-white">42g</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white/70">Fat</span>
+<span class="font-label-lg text-label-lg text-white">12g</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recipe 2 -->
+<section class="recipe-section w-full">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a gourmet mediterranean salad featuring deep purple olives, bright red cherry tomatoes, and creamy feta cheese. The lighting is warm and directional, casting soft shadows that give the food a tactile, three-dimensional quality. The vibrant coral accents from the branding are subtly echoed in the fresh ingredients. The image feels artisanal and inviting, capturing the essence of high-end home cooking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaGcgLWam6UqqS-zIJPqI65DMPFrU4ukEK0Dou_Fj47lz7hoZrFyGmiUepxlElwXswuZJXPgC9gnV98vf9pLE2px_53bX9SwuUCpZOZzABd0mXb_GzfMOwm9WySp_hvc8gLGL_ndOVdTtT172oyQmNv4Skc_XJ6dTUMeuS8UB78iIc4-ol-DsHJmAyNbZ0_dA6vtOElOepRm78x1dYBmbcMb4K2qHZkubbL8IgsekUGZY8F7iC0WhCLUOgY8j9lm4ZkElomAsO5S5Z"/>
+</div>
+<!-- Glass Scrim -->
+<div class="absolute inset-0 z-10 glass-overlay"></div>
+<!-- Right Action Bar -->
+<div class="absolute right-container-margin bottom-32 z-30 flex flex-col gap-lg items-center">
+<div class="flex flex-col items-center gap-xs">
+<button class="action-button-glass p-3 rounded-full text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<span class="font-label-md text-label-md text-white">1.8k</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<button class="action-button-glass p-3 rounded-full text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</button>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<button class="action-button-glass p-3 rounded-full text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+<!-- Bottom Info Overlay -->
+<div class="absolute bottom-28 left-container-margin right-container-margin z-30 mb-8">
+<div class="flex flex-wrap gap-sm mb-md">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">10 mins</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-md text-label-md">Easy</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-white mb-md">Artisan Greek Salad</h2>
+<div class="flex gap-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white/70">Protein</span>
+<span class="font-label-lg text-label-lg text-white">8g</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white/70">Carbs</span>
+<span class="font-label-lg text-label-lg text-white">14g</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-white/70">Fat</span>
+<span class="font-label-lg text-label-lg text-white">18g</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface dark:bg-inverse-surface shadow-[0px_-8px_24px_rgba(0,0,0,0.06)] rounded-t-xl">
+<!-- Feed Active -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full px-4 py-1 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-md text-label-md">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="book">book</span>
+<span class="font-label-md text-label-md">Recipes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-label-md text-label-md">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">List</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple touch interaction for heart button
+        document.querySelectorAll('[data-icon="favorite"]').forEach(btn => {
+            btn.closest('button').addEventListener('click', function() {
+                const span = this.querySelector('.material-symbols-outlined');
+                const isFilled = span.style.fontVariationSettings.includes("'FILL' 1");
+                span.style.fontVariationSettings = isFilled ? "'FILL' 0" : "'FILL' 1";
+                if(!isFilled) {
+                    this.classList.add('text-primary-container');
+                    // Sparkle effect placeholder
+                } else {
+                    this.classList.remove('text-primary-container');
+                }
+            });
+        });
+    </script>
+</body></html>

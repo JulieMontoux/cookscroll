@@ -1,0 +1,618 @@
+{
+  "nodes": [
+    {
+      "id": "constants_api_constants_apiconstants",
+      "label": "ApiConstants",
+      "file_type": "code",
+      "source_file": "lib/core/constants/api_constants.dart",
+      "source_location": "1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "router_app_router_approuter",
+      "label": "appRouter (GoRouter provider)",
+      "file_type": "code",
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "21",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "router_app_router_approuterprovider",
+      "label": "appRouterProvider (AutoDisposeProvider<GoRouter>)",
+      "file_type": "code",
+      "source_file": "lib/core/router/app_router.g.dart",
+      "source_location": "13",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "router_app_router_onboardingflow",
+      "label": "Onboarding Navigation Flow (/onboarding -> /onboarding/dietary -> /onboarding/skill -> /feed)",
+      "file_type": "concept",
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "23-79",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "router_app_router_shellroute",
+      "label": "ShellRoute (MainScaffold wrapping authenticated routes)",
+      "file_type": "concept",
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "41-77",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theme_app_colors_appcolors",
+      "label": "AppColors",
+      "file_type": "code",
+      "source_file": "lib/core/theme/app_colors.dart",
+      "source_location": "3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theme_app_theme_apptheme",
+      "label": "AppTheme",
+      "file_type": "code",
+      "source_file": "lib/core/theme/app_theme.dart",
+      "source_location": "5",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_onboarding_provider_onboardingstate",
+      "label": "OnboardingState (selectedAllergens, skillLevel)",
+      "file_type": "code",
+      "source_file": "lib/features/auth/presentation/providers/onboarding_provider.dart",
+      "source_location": "5",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_onboarding_provider_onboardingnotifier",
+      "label": "OnboardingNotifier (Riverpod @riverpod notifier)",
+      "file_type": "code",
+      "source_file": "lib/features/auth/presentation/providers/onboarding_provider.dart",
+      "source_location": "26",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_onboarding_provider_onboardingnotifierprovider",
+      "label": "onboardingNotifierProvider (AutoDisposeNotifierProvider)",
+      "file_type": "code",
+      "source_file": "lib/features/auth/presentation/providers/onboarding_provider.g.dart",
+      "source_location": "14",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_login_screen_loginscreen",
+      "label": "LoginScreen",
+      "file_type": "code",
+      "source_file": "lib/features/auth/presentation/screens/login_screen.dart",
+      "source_location": "5",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "label": "OnboardingDietaryScreen",
+      "file_type": "code",
+      "source_file": "lib/features/auth/presentation/screens/onboarding_dietary_screen.dart",
+      "source_location": "17",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_onboarding_skill_screen_onboardingskillscreen",
+      "label": "OnboardingSkillScreen",
+      "file_type": "code",
+      "source_file": "lib/features/auth/presentation/screens/onboarding_skill_screen.dart",
+      "source_location": "14",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+      "label": "OnboardingWelcomeScreen",
+      "file_type": "code",
+      "source_file": "lib/features/auth/presentation/screens/onboarding_welcome_screen.dart",
+      "source_location": "6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_onboarding_flow",
+      "label": "Onboarding Flow (3-step: Welcome -> Dietary -> Skill -> Feed)",
+      "file_type": "concept",
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_riverpod_pattern",
+      "label": "Riverpod @riverpod code-gen pattern (AutoDisposeNotifier + generated provider)",
+      "file_type": "concept",
+      "source_file": "lib/features/auth/presentation/providers/onboarding_provider.dart",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_gorouter_pattern",
+      "label": "go_router navigation pattern (context.go + GoRoute declarations)",
+      "file_type": "concept",
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_mealdb_api",
+      "label": "TheMealDB external API (base URL + endpoints)",
+      "file_type": "concept",
+      "source_file": "lib/core/constants/api_constants.dart",
+      "source_location": "2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_usda_api",
+      "label": "USDA FoodData Central API (nutrition data)",
+      "file_type": "concept",
+      "source_file": "lib/core/constants/api_constants.dart",
+      "source_location": "3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "router_app_router_approuterprovider",
+      "target": "router_app_router_approuter",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/router/app_router.g.dart",
+      "source_location": "12-13",
+      "weight": 1.0
+    },
+    {
+      "source": "theme_app_theme_apptheme",
+      "target": "theme_app_colors_appcolors",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/theme/app_theme.dart",
+      "source_location": "3",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_provider_onboardingnotifier",
+      "target": "auth_onboarding_provider_onboardingstate",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/providers/onboarding_provider.dart",
+      "source_location": "26-43",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_provider_onboardingnotifierprovider",
+      "target": "auth_onboarding_provider_onboardingnotifier",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/providers/onboarding_provider.g.dart",
+      "source_location": "14-23",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "target": "auth_onboarding_provider_onboardingnotifierprovider",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_dietary_screen.dart",
+      "source_location": "22-24",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_skill_screen_onboardingskillscreen",
+      "target": "auth_onboarding_provider_onboardingnotifierprovider",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_skill_screen.dart",
+      "source_location": "19-21",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "target": "auth_onboarding_provider_onboardingnotifier",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_dietary_screen.dart",
+      "source_location": "64-66",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_skill_screen_onboardingskillscreen",
+      "target": "auth_onboarding_provider_onboardingnotifier",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_skill_screen.dart",
+      "source_location": "61-63",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+      "target": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_welcome_screen.dart",
+      "source_location": "48",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+      "target": "auth_login_screen_loginscreen",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_welcome_screen.dart",
+      "source_location": "60",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "target": "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_dietary_screen.dart",
+      "source_location": "36",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "target": "auth_onboarding_skill_screen_onboardingskillscreen",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_dietary_screen.dart",
+      "source_location": "72",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_skill_screen_onboardingskillscreen",
+      "target": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_skill_screen.dart",
+      "source_location": "33",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_login_screen_loginscreen",
+      "target": "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/login_screen.dart",
+      "source_location": "45",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_login_screen_loginscreen",
+      "target": "theme_app_colors_appcolors",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/login_screen.dart",
+      "source_location": "3",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "target": "theme_app_colors_appcolors",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_dietary_screen.dart",
+      "source_location": "4",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_skill_screen_onboardingskillscreen",
+      "target": "theme_app_colors_appcolors",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_skill_screen.dart",
+      "source_location": "4",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+      "target": "theme_app_colors_appcolors",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_welcome_screen.dart",
+      "source_location": "3",
+      "weight": 1.0
+    },
+    {
+      "source": "router_app_router_approuter",
+      "target": "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "27",
+      "weight": 1.0
+    },
+    {
+      "source": "router_app_router_approuter",
+      "target": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "31",
+      "weight": 1.0
+    },
+    {
+      "source": "router_app_router_approuter",
+      "target": "auth_onboarding_skill_screen_onboardingskillscreen",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "35",
+      "weight": 1.0
+    },
+    {
+      "source": "router_app_router_approuter",
+      "target": "auth_login_screen_loginscreen",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "39",
+      "weight": 1.0
+    },
+    {
+      "source": "router_app_router_approuter",
+      "target": "router_app_router_shellroute",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "41",
+      "weight": 1.0
+    },
+    {
+      "source": "concept_riverpod_pattern",
+      "target": "auth_onboarding_provider_onboardingnotifier",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/auth/presentation/providers/onboarding_provider.dart",
+      "source_location": "25",
+      "weight": 0.95
+    },
+    {
+      "source": "concept_riverpod_pattern",
+      "target": "router_app_router_approuter",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "20",
+      "weight": 0.95
+    },
+    {
+      "source": "concept_gorouter_pattern",
+      "target": "router_app_router_onboardingflow",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/core/router/app_router.dart",
+      "source_location": "23-79",
+      "weight": 0.95
+    },
+    {
+      "source": "constants_api_constants_apiconstants",
+      "target": "concept_mealdb_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/constants/api_constants.dart",
+      "source_location": "2",
+      "weight": 1.0
+    },
+    {
+      "source": "constants_api_constants_apiconstants",
+      "target": "concept_usda_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/constants/api_constants.dart",
+      "source_location": "3",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_onboarding_skill_screen_onboardingskillscreen",
+      "target": "concept_onboarding_flow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_skill_screen.dart",
+      "source_location": "69",
+      "weight": 0.95
+    },
+    {
+      "source": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "target": "concept_onboarding_flow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_dietary_screen.dart",
+      "source_location": "72",
+      "weight": 0.95
+    },
+    {
+      "source": "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+      "target": "concept_onboarding_flow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_welcome_screen.dart",
+      "source_location": "48",
+      "weight": 0.95
+    },
+    {
+      "source": "auth_onboarding_provider_onboardingnotifier",
+      "target": "concept_onboarding_flow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "lib/features/auth/presentation/providers/onboarding_provider.dart",
+      "source_location": "26",
+      "weight": 0.85
+    },
+    {
+      "source": "auth_onboarding_skill_screen_onboardingskillscreen",
+      "target": "auth_onboarding_provider_onboardingstate",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_skill_screen.dart",
+      "source_location": "19-21",
+      "weight": 0.95
+    },
+    {
+      "source": "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+      "target": "auth_onboarding_provider_onboardingstate",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "lib/features/auth/presentation/screens/onboarding_dietary_screen.dart",
+      "source_location": "22-24",
+      "weight": 0.95
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hyperedge_onboarding_flow_screens",
+      "label": "Onboarding 3-screen flow: Welcome -> Dietary -> Skill -> /feed",
+      "nodes": [
+        "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+        "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+        "auth_onboarding_skill_screen_onboardingskillscreen",
+        "concept_onboarding_flow"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/router/app_router.dart"
+    },
+    {
+      "id": "hyperedge_onboarding_riverpod_state",
+      "label": "OnboardingDietaryScreen + OnboardingSkillScreen share state via onboardingNotifierProvider",
+      "nodes": [
+        "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+        "auth_onboarding_skill_screen_onboardingskillscreen",
+        "auth_onboarding_provider_onboardingnotifier",
+        "auth_onboarding_provider_onboardingnotifierprovider",
+        "auth_onboarding_provider_onboardingstate"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/features/auth/presentation/providers/onboarding_provider.dart"
+    },
+    {
+      "id": "hyperedge_theme_consumers",
+      "label": "All auth screens reference AppColors for consistent theming",
+      "nodes": [
+        "auth_login_screen_loginscreen",
+        "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+        "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+        "auth_onboarding_skill_screen_onboardingskillscreen",
+        "theme_app_colors_appcolors"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/theme/app_colors.dart"
+    },
+    {
+      "id": "hyperedge_router_registered_screens",
+      "label": "appRouter registers all onboarding + auth screens as GoRoute entries",
+      "nodes": [
+        "router_app_router_approuter",
+        "auth_onboarding_welcome_screen_onboardingwelcomescreen",
+        "auth_onboarding_dietary_screen_onboardingdietaryscreen",
+        "auth_onboarding_skill_screen_onboardingskillscreen",
+        "auth_login_screen_loginscreen"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/core/router/app_router.dart"
+    }
+  ],
+  "input_tokens": 6200,
+  "output_tokens": 1800
+}

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CookScroll - Search Recipes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#00504c",
+            "on-tertiary-fixed": "#00201e",
+            "surface-container": "#e8eff1",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#ffb3b0",
+            "primary-fixed-dim": "#ffb3b0",
+            "on-background": "#161d1f",
+            "surface": "#f4fafd",
+            "secondary": "#8f4e00",
+            "inverse-on-surface": "#ebf2f4",
+            "tertiary-container": "#1eada5",
+            "surface-tint": "#ae2f34",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#dde4e6",
+            "surface-variant": "#dde4e6",
+            "on-primary-fixed-variant": "#8c1520",
+            "on-primary-fixed": "#410006",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e2e9ec",
+            "outline": "#8c706f",
+            "primary-container": "#ff6b6b",
+            "on-secondary-fixed": "#2e1500",
+            "secondary-fixed-dim": "#ffb77a",
+            "on-surface-variant": "#584140",
+            "secondary-fixed": "#ffdcc2",
+            "on-primary-container": "#6d0010",
+            "on-secondary-fixed-variant": "#6d3a00",
+            "on-tertiary-container": "#003a37",
+            "surface-dim": "#d4dbdd",
+            "surface-container-low": "#eef5f7",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#e0bfbd",
+            "inverse-surface": "#2b3234",
+            "on-secondary-container": "#6b3900",
+            "secondary-container": "#fc9d41",
+            "tertiary": "#006a65",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdad8",
+            "on-surface": "#161d1f",
+            "background": "#f4fafd",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#7cf6ec",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#5dd9d0",
+            "surface-bright": "#f4fafd",
+            "primary": "#ae2f34",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "md": "16px",
+            "container-margin": "20px",
+            "base": "4px",
+            "sm": "8px",
+            "xs": "4px",
+            "xl": "32px",
+            "gutter": "16px",
+            "lg": "24px"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Montserrat"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Montserrat"],
+            "label-lg": ["Inter"],
+            "headline-md": ["Montserrat"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Montserrat"],
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-scrim {
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    }
+    ::-webkit-scrollbar { display: none; }
+    body { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar (From JSON Anchor) -->
+<header class="fixed top-0 z-50 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center w-full px-container-margin py-sm">
+<div class="flex items-center gap-md">
+<button class="active:scale-95 transition-transform duration-200 hover:bg-surface-variant/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary">arrow_back</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-inverse-primary">CookScroll</h1>
+</div>
+<div class="flex items-center">
+<button class="active:scale-95 transition-transform duration-200 hover:bg-surface-variant/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-container-margin min-h-screen">
+<!-- Search Bar Section -->
+<section class="mb-lg">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full bg-surface-container-low h-14 pl-12 pr-4 rounded-xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-body-md text-on-surface placeholder:text-on-surface-variant/60" placeholder="Find your next favorite meal..." type="text"/>
+</div>
+</section>
+<!-- Recent Searches Chips -->
+<section class="mb-xl">
+<div class="flex justify-between items-center mb-sm">
+<h2 class="font-headline-sm-mobile text-headline-sm-mobile text-on-surface">Recent searches</h2>
+<button class="text-primary font-label-lg hover:underline transition-all">Clear</button>
+</div>
+<div class="flex flex-wrap gap-sm">
+<div class="bg-secondary-container/20 text-on-secondary-container px-4 py-2 rounded-full font-label-md flex items-center gap-2 hover:bg-secondary-container/40 cursor-pointer transition-colors border border-outline-variant/30">
+<span>Truffle Pasta</span>
+<span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+<div class="bg-secondary-container/20 text-on-secondary-container px-4 py-2 rounded-full font-label-md flex items-center gap-2 hover:bg-secondary-container/40 cursor-pointer transition-colors border border-outline-variant/30">
+<span>Vegan Ramen</span>
+<span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+<div class="bg-secondary-container/20 text-on-secondary-container px-4 py-2 rounded-full font-label-md flex items-center gap-2 hover:bg-secondary-container/40 cursor-pointer transition-colors border border-outline-variant/30">
+<span>Quick Dinner</span>
+<span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+</div>
+</section>
+<!-- Results Grid -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-sm-mobile text-headline-sm-mobile text-on-surface">Results</h2>
+<span class="text-on-surface-variant font-label-md">124 found</span>
+</div>
+<!-- 2-Column Masonry-Style Grid -->
+<div class="grid grid-cols-2 gap-md">
+<!-- Recipe Card 1 -->
+<article class="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] group">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-angle, professional food photograph of a vibrant salad bowl featuring grilled chicken, fresh avocado slices, and cherry tomatoes. The scene is brightly lit with natural daylight, creating a clean and modern culinary atmosphere. Soft shadows and a pristine white background emphasize the healthy, energetic brand identity of the app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWvIK8lb89nBYWHkz9RAI5-GEaNYgdHvgCy-FULVP1zYG857i3Y88mk6XYIs6GDkU1mS3dDEgSBg6BN0w0h8FQHUZgm6WP-ytqGFv71dGAThyBcF51iMmUmCYg94baawOM9MPVRdjknM6iDzKilVg7oJDBid4ECj2jsNZrMccI_NetzEEF9CG0T8nIYggQ5CR0bMGqIICroJj5EDs2xXEgBoUz8sXcrc6bknIH4hdTJi2nu4ItMFIxuy0jxG_eotl7VwF5AS5RHU6U"/>
+<div class="absolute inset-0 glass-scrim"></div>
+<div class="absolute top-2 right-2">
+<button class="w-8 h-8 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<h3 class="font-label-lg text-white mb-1 line-clamp-2">Avocado &amp; Tomato Power Bowl</h3>
+<div class="flex items-center gap-1 opacity-90">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="text-[10px] font-label-md uppercase tracking-wider">15 MINS</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Recipe Card 2 -->
+<article class="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] group">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up shot of a steaming bowl of vegan ramen with colorful vegetables, tofu, and rich broth. The lighting is warm and moody, highlighting the steam rising from the bowl. The aesthetic is tactile and inviting, using a palette of earthy tones and vibrant green garnishes to evoke a sense of home-cooked comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi7mOu50e24r4zJug2RsYZyKPKYTEXe9GnrENWAwgmLQDxSTOOJaiSa44JcHQ_6blULypi5Ol2DT6sjMRRAlA2cWzsi2NnM8Tec3p3_sJfwO-7QZ9rV42g_c-EI9QLH86PExzz7JxXYv1rAOm8IeJA4CGzO0pIM9S1qVSmNmistYT16q8ReDhaTebI5IQDhTGGcxMuYkOk8RNtqiP_93mOln2AmtTv5Hz8WdT1Dzyp8hma0U55CuY7j1Cu-1EGXGNT5x6a5UPUzHSa"/>
+<div class="absolute inset-0 glass-scrim"></div>
+<div class="absolute top-2 right-2">
+<button class="w-8 h-8 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<h3 class="font-label-lg text-white mb-1 line-clamp-2">Spicy Vegan Tofu Ramen</h3>
+<div class="flex items-center gap-1 opacity-90">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="text-[10px] font-label-md uppercase tracking-wider">25 MINS</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Recipe Card 3 -->
+<article class="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] group">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Delicious flatbread pizza topped with fresh basil and mozzarella pearls on a rustic wooden board. The lighting is bright and high-key, creating a modern, clean kitchen companion feel. The composition uses generous negative space around the subject, keeping the UI feel uncluttered and focused on the quality of ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCl2hr8AyMD_5KPSjGfz-xnf_UotlybvxUlaJBgV3d8B1WeudymsVdvASfZihxOX3ZP_Lhb_yjChLV4RxGQe910_F4DFMgINesOO2meaSiYSfswksYUKNhyX3aiwDgmlpHPFDG82UC6c7c-JTu4bj_zTp8-94bjiJYiJLyE5gf7_09BA-BN8PFnBIOU43OQk638_vkQ_JeXE9vr8hkVGGXAhHzcPz7qj-S_0EH-BamfCK_Cb2YRwbT0CZmyv-tureezTZ5KcySlJA7"/>
+<div class="absolute inset-0 glass-scrim"></div>
+<div class="absolute top-2 right-2">
+<button class="w-8 h-8 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<h3 class="font-label-lg text-white mb-1 line-clamp-2">Fresh Basil Margherita Flatbread</h3>
+<div class="flex items-center gap-1 opacity-90">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="text-[10px] font-label-md uppercase tracking-wider">20 MINS</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Recipe Card 4 -->
+<article class="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)] group">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A gourmet dish of seared salmon served with a side of sautéed asparagus and quinoa. The photography style is upscale and sleek, featuring sharp focus and a vibrant color palette of corals and greens. Soft ambient lighting creates a gentle glow on the plate, making the meal look exceptionally appetizing and professionally prepared." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYAy5TKvdst_CCaE_4MDZ1lCg_3xg4_lcIpQCtxELS5CLeW02endFopRWpmpPK4sLCEPXOZrJ5uO6lrhG7UTPpnBEnWPrkAfVrTC7-A4JWKT0ywHuGhaC-9MsNGF38uJynwauTd3sAOT6uk0S9gLLmQfTPysjX8QzAeGdXf6vpzWcxXfvGLJMTo7ud9Y4PqMxg5ea6U7JtWPDpLKXmFw3TS1lQhJyfrdirxn68BGrKZnwm3xNXKLzG8cUKUBPlEtKx2l4FSpLucSB6"/>
+<div class="absolute inset-0 glass-scrim"></div>
+<div class="absolute top-2 right-2">
+<button class="w-8 h-8 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<h3 class="font-label-lg text-white mb-1 line-clamp-2">Seared Salmon with Quinoa</h3>
+<div class="flex items-center gap-1 opacity-90">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="text-[10px] font-label-md uppercase tracking-wider">30 MINS</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (From JSON Anchor) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface dark:bg-inverse-surface shadow-[0px_-8px_24px_rgba(0,0,0,0.06)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-md text-label-md">Feed</span>
+</a>
+<!-- Search Intent: Recipes is most closely related to Search discovery here -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full px-4 py-1 hover:opacity-80 scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">book</span>
+<span class="font-label-md text-label-md">Recipes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-label-md text-label-md">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-md text-label-md">List</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:opacity-80 scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+    // Micro-interaction: Active state feedback on search items
+    document.querySelectorAll('.cursor-pointer').forEach(item => {
+      item.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 100);
+      });
+    });
+
+    // Subtle scroll effect for TopAppBar
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 20) {
+        header.classList.add('shadow-md');
+        header.classList.remove('bg-surface/80');
+        header.classList.add('bg-surface');
+      } else {
+        header.classList.remove('shadow-md');
+        header.classList.add('bg-surface/80');
+        header.classList.remove('bg-surface');
+      }
+    });
+  </script>
+</body></html>
