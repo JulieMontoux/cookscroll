@@ -1,5 +1,4 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import '../../../menu/presentation/providers/menu_provider.dart';
 import '../../../recipes/domain/models/recipe.dart';
 
 part 'shopping_list_provider.g.dart';
