@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../shared/widgets/dots_indicator.dart';
 
 class OnboardingWelcomeScreen extends StatelessWidget {
   const OnboardingWelcomeScreen({super.key});
@@ -68,7 +69,7 @@ class OnboardingWelcomeScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 24),
-              const _DotsIndicator(current: 0, total: 3),
+              const DotsIndicator(current: 0, total: 3),
               const SizedBox(height: 32),
             ],
           ),
@@ -153,29 +154,3 @@ class _FeatureCard extends StatelessWidget {
   }
 }
 
-class _DotsIndicator extends StatelessWidget {
-  final int current;
-  final int total;
-
-  const _DotsIndicator({required this.current, required this.total});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(total, (i) {
-        final isActive = i == current;
-        return AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
-          margin: const EdgeInsets.symmetric(horizontal: 4),
-          width: isActive ? 24 : 8,
-          height: 8,
-          decoration: BoxDecoration(
-            color: isActive ? AppColors.primary : AppColors.surfaceVariant,
-            borderRadius: BorderRadius.circular(4),
-          ),
-        );
-      }),
-    );
-  }
-}
